@@ -39,7 +39,7 @@
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "8403 Alton Springs St",
+          "streetAddress": "8438 Alton Springs St",
           "addressLocality": "Mission",
           "addressRegion": "TX",
           "postalCode": "78574",
@@ -87,6 +87,11 @@
         },
       };
     </script>
+
+    <!-- Swiper (open-source slider, MIT) - github.com/nolimits4web/swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <style>
       html { scroll-behavior: smooth; }
       [id] { scroll-margin-top: 5.5rem; }
@@ -119,6 +124,16 @@
       @keyframes pulsering { 0% { box-shadow: 0 0 0 0 rgba(242,106,33,.5);} 70%{ box-shadow: 0 0 0 14px rgba(242,106,33,0);} 100%{ box-shadow:0 0 0 0 rgba(242,106,33,0);} }
       .pulse { animation: pulsering 2.4s infinite; }
 
+      /* Swiper hero */
+      .heroSwiper, .heroSwiper .swiper-slide { width: 100%; height: 100%; }
+      .heroSwiper .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+      .heroSwiper .swiper-pagination-bullet { background: #ffffff; opacity: .5; }
+      .heroSwiper .swiper-pagination-bullet-active { background: #ef7a26; opacity: 1; }
+
+      /* Brand marquee (continuous linear scroll) */
+      .brandSwiper .swiper-wrapper { transition-timing-function: linear !important; align-items: center; }
+      .brandSwiper .swiper-slide { display: flex; align-items: center; justify-content: center; }
+
       @media (prefers-reduced-motion: reduce) {
         .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
         .slide { transition: opacity .4s ease !important; transform: none !important; }
@@ -143,6 +158,7 @@
           <a href="#work" data-i18n="nav.work" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Our Work</a>
           <a href="#services" data-i18n="nav.services" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Services</a>
           <a href="#about" data-i18n="nav.about" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Why Mando's</a>
+          <a href="#brands" data-i18n="nav.brands" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Brands</a>
           <a href="#reviews" data-i18n="nav.reviews" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Reviews</a>
           <a href="#contact" data-i18n="nav.contact" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Contact</a>
         </nav>
@@ -174,6 +190,7 @@
           <a href="#work" data-i18n="nav.work" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Our Work</a>
           <a href="#services" data-i18n="nav.services" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Services</a>
           <a href="#about" data-i18n="nav.about" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Why Mando's</a>
+          <a href="#brands" data-i18n="nav.brands" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Brands</a>
           <a href="#reviews" data-i18n="nav.reviews" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Reviews</a>
           <a href="#contact" data-i18n="nav.contact" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Contact</a>
           <div class="mt-1 flex items-center gap-2 px-3">
@@ -221,18 +238,22 @@
             <p class="mt-4 text-sm text-slate-300" data-i18n="hero.note">Appointment required · Onsite &amp; mobile service available</p>
           </div>
 
-          <!-- Sliding gallery box -->
+          <!-- Sliding gallery box (Swiper) -->
           <div class="relative">
-            <div class="slides aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/15">
-              <div class="slide active"><img src="assets/work/roof-1-before.png" alt="Rotted RV roof decking before repair" /></div>
-              <div class="slide"><img src="assets/work/roof-4-after.png" alt="Freshly sealed RV rubber roof after repair" /></div>
-              <div class="slide"><img src="assets/work/floor-1-before.png" alt="Water-damaged RV subfloor before repair" /></div>
-              <div class="slide"><img src="assets/work/floor-4-after.png" alt="Finished RV interior with new flooring" /></div>
-              <div class="slide"><img src="assets/work/roof-3-newdeck.png" alt="New plywood roof decking installed" /></div>
-              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/60 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 rounded-full bg-navy-950/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur" data-i18n="hero.badge">Real jobs · Real results</div>
+            <div class="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/15">
+              <div class="swiper heroSwiper h-full w-full">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/work/roof-1-before.png" alt="Rotted RV roof decking before repair" /></div>
+                  <div class="swiper-slide"><img src="assets/work/roof-4-after.png" alt="Freshly sealed RV rubber roof after repair" /></div>
+                  <div class="swiper-slide"><img src="assets/work/floor-1-before.png" alt="Water-damaged RV subfloor before repair" /></div>
+                  <div class="swiper-slide"><img src="assets/work/floor-4-after.png" alt="Finished RV interior with new flooring" /></div>
+                  <div class="swiper-slide"><img src="assets/work/roof-3-newdeck.png" alt="New plywood roof decking installed" /></div>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-navy-950/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 z-10 rounded-full bg-navy-950/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur" data-i18n="hero.badge">Real jobs · Real results</div>
+              <div class="heroPagination swiper-pagination absolute bottom-3 left-0 right-0 z-10"></div>
             </div>
-            <div id="slideDots" class="mt-4 flex justify-center gap-2" role="tablist" aria-label="Gallery"></div>
           </div>
         </div>
 
@@ -265,7 +286,7 @@
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy-800 text-white">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-6 9 6M5 10v9h14v-9"/></svg>
               </span>
-              <h3 class="text-xl font-bold text-navy-800" data-i18n="work.roof.title">Full Roof Rebuild &amp; Reseal</h3>
+              <h3 class="text-xl font-bold text-navy-800" data-i18n="work.roof.title">Roof Replacement</h3>
             </div>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <figure class="gal group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100" data-full="assets/work/roof-1-before.png">
@@ -401,6 +422,39 @@
         </div>
       </section>
 
+      <!-- ===== OEM Brands ===== -->
+      <section id="brands" class="relative overflow-hidden bg-navy-900 py-16 text-white sm:py-20">
+        <div class="absolute -right-24 top-0 h-72 w-72 rounded-full bg-brand-orange/10 blur-3xl" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-6xl px-4">
+          <div class="reveal mx-auto max-w-2xl text-center">
+            <p class="text-sm font-bold uppercase tracking-widest text-brand-amber" data-i18n="brands.kicker">Parts &amp; brands</p>
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl" data-i18n="brands.title">Brands We Work With</h2>
+            <p class="mt-4 text-slate-300" data-i18n="brands.intro">We service and install genuine OEM parts from the RV industry's most trusted manufacturers.</p>
+          </div>
+
+          <!-- Featured: Airxcel family -->
+          <div class="reveal mt-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl sm:p-8">
+            <img src="assets/brands/airxcel-family.png" alt="Airxcel family of brands: Suburban, Coleman-Mach, MaxxAir, Velarium, Dicor, InVision" class="mx-auto max-h-56 w-auto object-contain" loading="lazy" />
+          </div>
+
+          <!-- Logo marquee -->
+          <div class="reveal mt-8">
+            <div class="swiper brandSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="width:auto"><div class="flex h-24 w-44 items-center justify-center rounded-xl bg-white p-4 shadow-sm"><img src="assets/brands/dometic.png" alt="Dometic" class="max-h-full max-w-full object-contain" loading="lazy" /></div></div>
+                <div class="swiper-slide" style="width:auto"><div class="flex h-24 w-44 items-center justify-center rounded-xl bg-white p-4 shadow-sm"><img src="assets/brands/lippert.png" alt="Lippert" class="max-h-full max-w-full object-contain" loading="lazy" /></div></div>
+                <div class="swiper-slide" style="width:auto"><div class="flex h-24 w-44 items-center justify-center rounded-xl bg-white p-4 shadow-sm"><img src="assets/brands/carefree.png" alt="Carefree" class="max-h-full max-w-full object-contain" loading="lazy" /></div></div>
+                <div class="swiper-slide" style="width:auto"><div class="flex h-24 w-44 items-center justify-center rounded-xl bg-white p-4 shadow-sm"><img src="assets/brands/cummins-onan.png" alt="Cummins and Onan" class="max-h-full max-w-full object-contain" loading="lazy" /></div></div>
+                <div class="swiper-slide" style="width:auto"><div class="flex h-24 w-44 items-center justify-center rounded-xl bg-white p-4 shadow-sm"><img src="assets/brands/wfco.png" alt="WFCO" class="max-h-full max-w-full object-contain" loading="lazy" /></div></div>
+                <div class="swiper-slide" style="width:auto"><div class="flex h-24 w-44 items-center justify-center rounded-xl bg-white p-4 shadow-sm"><img src="assets/brands/thetford-norcold.png" alt="Thetford and Norcold" class="max-h-full max-w-full object-contain" loading="lazy" /></div></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="reveal mt-8 text-center text-sm text-slate-400" data-i18n="brands.note">Don't see your brand? We work with most major RV manufacturers — just ask.</p>
+        </div>
+      </section>
+
       <!-- ===== Why Mando's ===== -->
       <section id="about" class="bg-cloud py-16 sm:py-20">
         <div class="mx-auto max-w-6xl px-4">
@@ -497,7 +551,7 @@
                   <svg class="mt-1 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.3-7-11a7 7 0 1114 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
                   <div>
                     <dt class="text-sm font-semibold uppercase tracking-wide text-brand-amber" data-i18n="contact.addr">Address</dt>
-                    <dd><address class="not-italic text-white"><a href="https://www.google.com/maps/search/?api=1&query=8403+Alton+Springs+St+Mission+TX+78574" target="_blank" rel="noopener noreferrer" class="hover:text-brand-amber">8403 Alton Springs St, Mission, TX 78574</a></address></dd>
+                    <dd><address class="not-italic text-white"><a href="https://www.google.com/maps/search/?api=1&query=8438+Alton+Springs+St+Mission+TX+78574" target="_blank" rel="noopener noreferrer" class="hover:text-brand-amber">8438 Alton Springs St, Mission, TX 78574</a></address></dd>
                   </div>
                 </div>
                 <div class="flex items-start gap-4">
@@ -522,7 +576,7 @@
 
             <div class="reveal reveal-delay-1 overflow-hidden rounded-2xl ring-1 ring-white/10">
               <iframe title="Map to Mando's RV Repair & Sales, Mission TX"
-                src="https://www.google.com/maps?q=8403+Alton+Springs+St+Mission+TX+78574&output=embed"
+                src="https://www.google.com/maps?q=8438+Alton+Springs+St+Mission+TX+78574&output=embed"
                 class="h-80 w-full lg:h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
@@ -556,8 +610,9 @@
       var I18N = {
         en: {
           skip: "Skip to content",
-          "nav.work": "Our Work", "nav.services": "Services", "nav.about": "Why Mando's", "nav.reviews": "Reviews", "nav.contact": "Contact",
+          "nav.work": "Our Work", "nav.services": "Services", "nav.about": "Why Mando's", "nav.brands": "Brands", "nav.reviews": "Reviews", "nav.contact": "Contact",
           "lang.label": "Language", "cta.call": "Call",
+          "brands.kicker": "Parts & brands", "brands.title": "Brands We Work With", "brands.intro": "We service and install genuine OEM parts from the RV industry's most trusted manufacturers.", "brands.note": "Don't see your brand? We work with most major RV manufacturers — just ask.",
           "hero.title": "Expert Mobile & On-Site RV Repair in Mission, TX",
           "hero.subtitle": "From rotted roofs and water damage to flooring, electrical, A/C and plumbing — we rebuild it right. We've seen it all.",
           "hero.cta": "Call to Schedule", "hero.cta2": "See Our Work",
@@ -565,7 +620,7 @@
           "hero.badge": "Real jobs · Real results",
           "strip.roofs": "Rubber Roofs", "strip.water": "Water Damage", "strip.floors": "Flooring", "strip.electric": "Electrical", "strip.ac": "A/C & Furnace", "strip.plumbing": "Plumbing", "strip.sales": "RV Sales",
           "work.kicker": "Before & after", "work.title": "See the Work, Step by Step", "work.intro": "Real RVs we brought back to life — from tear-down to finished. Tap any photo to enlarge.",
-          "work.roof.title": "Full Roof Rebuild & Reseal",
+          "work.roof.title": "Roof Replacement",
           "work.roof.s1": "Rotted, water-soaked decking", "work.roof.s2": "Tear-out down to the frame", "work.roof.s3": "Brand-new decking installed", "work.roof.s4": "Sealed & watertight",
           "work.floor.title": "Water Damage Floor Replacement",
           "work.floor.s1": "Black, rotted subfloor", "work.floor.s2": "Damaged flooring removed", "work.floor.s3": "Solid new subfloor", "work.floor.s4": "Beautiful finished interior",
@@ -597,8 +652,9 @@
         },
         es: {
           skip: "Saltar al contenido",
-          "nav.work": "Trabajos", "nav.services": "Servicios", "nav.about": "Por qué Mando's", "nav.reviews": "Reseñas", "nav.contact": "Contacto",
+          "nav.work": "Trabajos", "nav.services": "Servicios", "nav.about": "Por qué Mando's", "nav.brands": "Marcas", "nav.reviews": "Reseñas", "nav.contact": "Contacto",
           "lang.label": "Idioma", "cta.call": "Llamar",
+          "brands.kicker": "Partes y marcas", "brands.title": "Marcas con las que trabajamos", "brands.intro": "Damos servicio e instalamos partes OEM originales de los fabricantes más confiables de la industria de RV.", "brands.note": "¿No ve su marca? Trabajamos con la mayoría de los fabricantes de RV — solo pregunte.",
           "hero.title": "Reparación de RV experta, móvil y en sitio en Mission, TX",
           "hero.subtitle": "Desde techos podridos y daños por agua hasta pisos, eléctrico, A/C y plomería — lo reconstruimos bien. Lo hemos visto todo.",
           "hero.cta": "Llamar para agendar", "hero.cta2": "Ver nuestro trabajo",
@@ -606,7 +662,7 @@
           "hero.badge": "Trabajos reales · Resultados reales",
           "strip.roofs": "Techos de hule", "strip.water": "Daño por agua", "strip.floors": "Pisos", "strip.electric": "Eléctrico", "strip.ac": "A/C y calefacción", "strip.plumbing": "Plomería", "strip.sales": "Venta de RV",
           "work.kicker": "Antes y después", "work.title": "Vea el trabajo, paso a paso", "work.intro": "RVs reales que revivimos — desde el desmontaje hasta el acabado. Toque cualquier foto para ampliar.",
-          "work.roof.title": "Reconstrucción y sellado de techo",
+          "work.roof.title": "Reemplazo de techo",
           "work.roof.s1": "Madera podrida y mojada", "work.roof.s2": "Desmontaje hasta el marco", "work.roof.s3": "Madera nueva instalada", "work.roof.s4": "Sellado e impermeable",
           "work.floor.title": "Reemplazo de piso por daño de agua",
           "work.floor.s1": "Subpiso negro y podrido", "work.floor.s2": "Piso dañado removido", "work.floor.s3": "Subpiso nuevo y firme", "work.floor.s4": "Interior terminado y hermoso",
@@ -638,8 +694,9 @@
         },
         fr: {
           skip: "Aller au contenu",
-          "nav.work": "Nos travaux", "nav.services": "Services", "nav.about": "Pourquoi Mando's", "nav.reviews": "Avis", "nav.contact": "Contact",
+          "nav.work": "Nos travaux", "nav.services": "Services", "nav.about": "Pourquoi Mando's", "nav.brands": "Marques", "nav.reviews": "Avis", "nav.contact": "Contact",
           "lang.label": "Langue", "cta.call": "Appeler",
+          "brands.kicker": "Pièces et marques", "brands.title": "Les marques avec lesquelles nous travaillons", "brands.intro": "Nous installons et réparons des pièces OEM d'origine des fabricants les plus fiables de l'industrie du VR.", "brands.note": "Vous ne voyez pas votre marque ? Nous travaillons avec la plupart des fabricants de VR — demandez-nous.",
           "hero.title": "Réparation de VR experte, mobile et sur place à Mission, TX",
           "hero.subtitle": "Des toits pourris et dégâts d'eau aux planchers, à l'électricité, la climatisation et la plomberie — on reconstruit comme il faut. On a tout vu.",
           "hero.cta": "Appeler pour un rendez-vous", "hero.cta2": "Voir nos travaux",
@@ -647,7 +704,7 @@
           "hero.badge": "Vrais travaux · Vrais résultats",
           "strip.roofs": "Toits en caoutchouc", "strip.water": "Dégâts d'eau", "strip.floors": "Planchers", "strip.electric": "Électricité", "strip.ac": "Clim & chauffage", "strip.plumbing": "Plomberie", "strip.sales": "Vente de VR",
           "work.kicker": "Avant & après", "work.title": "Voyez le travail, étape par étape", "work.intro": "De vrais VR que nous avons restaurés — du démontage à la finition. Touchez une photo pour l'agrandir.",
-          "work.roof.title": "Reconstruction et étanchéité du toit",
+          "work.roof.title": "Remplacement de toit",
           "work.roof.s1": "Bois pourri et gorgé d'eau", "work.roof.s2": "Démontage jusqu'au cadre", "work.roof.s3": "Nouveau platelage installé", "work.roof.s4": "Scellé et étanche",
           "work.floor.title": "Remplacement de plancher (dégâts d'eau)",
           "work.floor.s1": "Sous-plancher noir et pourri", "work.floor.s2": "Plancher endommagé retiré", "work.floor.s3": "Nouveau sous-plancher solide", "work.floor.s4": "Intérieur fini magnifique",
@@ -752,30 +809,28 @@
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
 
-        /* ====== Hero slideshow ====== */
-        var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
-        var dotsWrap = document.getElementById("slideDots");
-        var cur = 0, timer;
-        slides.forEach(function (_, i) {
-          var d = document.createElement("button");
-          d.type = "button";
-          d.setAttribute("role", "tab");
-          d.setAttribute("aria-label", "Slide " + (i + 1));
-          d.className = "h-2.5 w-2.5 rounded-full bg-white/40 transition";
-          d.addEventListener("click", function () { go(i); reset(); });
-          dotsWrap.appendChild(d);
-        });
-        var dots = Array.prototype.slice.call(dotsWrap.children);
-        function go(n) {
-          slides[cur].classList.remove("active");
-          dots[cur].classList.remove("bg-white"); dots[cur].classList.add("bg-white/40");
-          cur = (n + slides.length) % slides.length;
-          slides[cur].classList.add("active");
-          dots[cur].classList.add("bg-white"); dots[cur].classList.remove("bg-white/40");
+        /* ====== Swiper: hero slider + brand marquee ====== */
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (window.Swiper) {
+          new Swiper(".heroSwiper", {
+            loop: true,
+            effect: "fade",
+            fadeEffect: { crossFade: true },
+            speed: 900,
+            autoplay: reduceMotion ? false : { delay: 4000, disableOnInteraction: false },
+            pagination: { el: ".heroPagination", clickable: true },
+          });
+
+          new Swiper(".brandSwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            loop: true,
+            freeMode: true,
+            allowTouchMove: true,
+            speed: 4000,
+            autoplay: reduceMotion ? false : { delay: 0, disableOnInteraction: false },
+          });
         }
-        function next() { go(cur + 1); }
-        function reset() { clearInterval(timer); timer = setInterval(next, 4000); }
-        if (slides.length) { go(0); reset(); }
 
         /* ====== Scroll reveal ====== */
         var reveals = document.querySelectorAll(".reveal");
