@@ -218,7 +218,10 @@
         <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:py-16 lg:grid-cols-2 lg:py-20">
           <div>
             <img src="assets/mandos-logo-emblem.png" alt="Mando's RV Repair & Sales emblem"
-              class="floaty mb-6 h-28 w-auto drop-shadow-2xl sm:h-32" />
+              class="floaty mb-4 h-28 w-auto drop-shadow-2xl sm:h-32" />
+            <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-amber ring-1 ring-white/15">
+              <span class="h-1.5 w-1.5 rounded-full bg-brand-orange"></span><span data-i18n="hero.since">Since 2016</span> · Mission, TX
+            </p>
             <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl" data-i18n="hero.title">
               Expert Mobile &amp; On-Site RV Repair in Mission, TX
             </h1>
@@ -367,52 +370,67 @@
         <div class="mx-auto max-w-6xl px-4">
           <div class="reveal mx-auto max-w-2xl text-center">
             <p class="text-sm font-bold uppercase tracking-widest text-brand-orange" data-i18n="services.kicker">What we do</p>
-            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy-800 sm:text-4xl" data-i18n="services.title">Our RV Services</h2>
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy-800 sm:text-4xl" data-i18n="services.title">We Offer a Variety of Services</h2>
             <p class="mt-4 text-slate-600" data-i18n="services.intro">One shop for everything your RV needs — repairs, upgrades, diagnostics and sales.</p>
           </div>
 
-          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article class="reveal group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
-              <div class="mb-4 inline-flex rounded-xl bg-brand-orange/10 p-3 text-brand-orange ring-1 ring-brand-orange/20 transition group-hover:bg-brand-orange group-hover:text-white">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-6 9 6M5 10v9h14v-9"/></svg>
+          <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Electrical & Appliances -->
+            <article class="reveal rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex flex-none rounded-xl bg-brand-orange/10 p-2.5 text-brand-orange ring-1 ring-brand-orange/20"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+                <h3 class="text-base font-extrabold uppercase tracking-wide text-navy-800" data-i18n="cat.elec">Electrical &amp; Appliances</h3>
               </div>
-              <h3 class="text-lg font-bold text-navy-800" data-i18n="svc.roof.t">Rubber Roofs &amp; Roof Rebuilds</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="svc.roof.d">Leak repair, resealing and full rubber-roof replacement to stop water damage for good.</p>
+              <dl class="space-y-2.5 text-sm">
+                <div><dt class="font-bold text-navy-700" data-i18n="lbl.12v">12V</dt><dd class="text-slate-600" data-i18n="it.e12v">Converters · Inverters · Re-Route Wiring</dd></div>
+                <div><dt class="font-bold text-navy-700" data-i18n="lbl.120v">120V</dt><dd class="text-slate-600" data-i18n="it.e120v">Lights · Harnesses · Chargers</dd></div>
+                <div><dt class="font-bold text-navy-700" data-i18n="lbl.acs">Air Conditioners</dt><dd class="text-slate-600" data-i18n="it.eac">RV · Fifth Wheels · Class A/B/C Coaches</dd></div>
+              </dl>
             </article>
-            <article class="reveal reveal-delay-1 group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
-              <div class="mb-4 inline-flex rounded-xl bg-brand-orange/10 p-3 text-brand-orange ring-1 ring-brand-orange/20 transition group-hover:bg-brand-orange group-hover:text-white">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2s6 5.7 6 10a6 6 0 11-12 0c0-4.3 6-10 6-10z"/></svg>
+
+            <!-- Plumbing & Tanks -->
+            <article class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex flex-none rounded-xl bg-brand-orange/10 p-2.5 text-brand-orange ring-1 ring-brand-orange/20"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2s6 5.7 6 10a6 6 0 11-12 0c0-4.3 6-10 6-10z"/></svg></span>
+                <h3 class="text-base font-extrabold uppercase tracking-wide text-navy-800" data-i18n="cat.plumb">Plumbing &amp; Tanks</h3>
               </div>
-              <h3 class="text-lg font-bold text-navy-800" data-i18n="svc.water.t">Water Damage &amp; Flooring</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="svc.water.d">Rotted subfloors, soft spots and water lines repaired and rebuilt with solid new flooring.</p>
+              <p class="text-sm leading-relaxed text-slate-600" data-i18n="it.plumb">Fresh &amp; gray tank repairs · Filtration · Pumps · Installations</p>
             </article>
-            <article class="reveal reveal-delay-2 group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
-              <div class="mb-4 inline-flex rounded-xl bg-brand-orange/10 p-3 text-brand-orange ring-1 ring-brand-orange/20 transition group-hover:bg-brand-orange group-hover:text-white">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+
+            <!-- A/C & Controls -->
+            <article class="reveal reveal-delay-2 rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex flex-none rounded-xl bg-brand-orange/10 p-2.5 text-brand-orange ring-1 ring-brand-orange/20"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/></svg></span>
+                <h3 class="text-base font-extrabold uppercase tracking-wide text-navy-800" data-i18n="cat.acc">A/C &amp; Controls</h3>
               </div>
-              <h3 class="text-lg font-bold text-navy-800" data-i18n="svc.elec.t">Electrical (120v / 12v)</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="svc.elec.d">Troubleshooting and rewiring for both 120-volt and 12-volt systems, converters and lighting.</p>
+              <p class="text-sm leading-relaxed text-slate-600" data-i18n="it.acc">Roof-top &amp; ducted A/C service · Thermostat upgrades · Smart monitoring · Installations</p>
             </article>
-            <article class="reveal group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
-              <div class="mb-4 inline-flex rounded-xl bg-brand-orange/10 p-3 text-brand-orange ring-1 ring-brand-orange/20 transition group-hover:bg-brand-orange group-hover:text-white">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/></svg>
+
+            <!-- Roofs & Sealant -->
+            <article class="reveal rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex flex-none rounded-xl bg-brand-orange/10 p-2.5 text-brand-orange ring-1 ring-brand-orange/20"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-6 9 6M5 10v9h14v-9"/></svg></span>
+                <h3 class="text-base font-extrabold uppercase tracking-wide text-navy-800" data-i18n="cat.roof">Roofs &amp; Sealant</h3>
               </div>
-              <h3 class="text-lg font-bold text-navy-800" data-i18n="svc.ac.t">A/C, Furnace &amp; Cooling</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="svc.ac.d">A/C, furnace and refrigerator cooling-unit service and replacement to keep you comfortable.</p>
+              <p class="text-sm leading-relaxed text-slate-600" data-i18n="it.roof">Roof sealing · Leak detection · Roof replacement · Vent sealing · Skylight replacement</p>
             </article>
-            <article class="reveal reveal-delay-1 group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
-              <div class="mb-4 inline-flex rounded-xl bg-brand-orange/10 p-3 text-brand-orange ring-1 ring-brand-orange/20 transition group-hover:bg-brand-orange group-hover:text-white">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 00-5.4 5.4l-6 6 2 2 6-6a4 4 0 005.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>
+
+            <!-- Slide-Outs & Awnings -->
+            <article class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex flex-none rounded-xl bg-brand-orange/10 p-2.5 text-brand-orange ring-1 ring-brand-orange/20"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18l-2 5H5L3 6zM5 11v8M19 11v8M5 15h14"/></svg></span>
+                <h3 class="text-base font-extrabold uppercase tracking-wide text-navy-800" data-i18n="cat.slide">Slide-Outs &amp; Awnings</h3>
               </div>
-              <h3 class="text-lg font-bold text-navy-800" data-i18n="svc.mech.t">Plumbing &amp; Mechanical</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="svc.mech.d">Plumbing, exhaust and mechanical troubleshooting — accurate diagnosis and honest fixes.</p>
+              <p class="text-sm leading-relaxed text-slate-600" data-i18n="it.slide">Slide-out seals · Gears &amp; motors · Awning fabrics · LED lights</p>
             </article>
-            <article class="reveal reveal-delay-2 group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-lg">
-              <div class="mb-4 inline-flex rounded-xl bg-brand-orange/10 p-3 text-brand-orange ring-1 ring-brand-orange/20 transition group-hover:bg-brand-orange group-hover:text-white">
-                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l1-7h16l1 7M3 13h18v5a1 1 0 01-1 1H4a1 1 0 01-1-1v-5zM7 19v2M17 19v2"/></svg>
+
+            <!-- Appliances -->
+            <article class="reveal reveal-delay-2 rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex flex-none rounded-xl bg-brand-orange/10 p-2.5 text-brand-orange ring-1 ring-brand-orange/20"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12v18H6zM6 10h12M9 6v1.5M9 13v3"/></svg></span>
+                <h3 class="text-base font-extrabold uppercase tracking-wide text-navy-800" data-i18n="cat.appl">Appliances</h3>
               </div>
-              <h3 class="text-lg font-bold text-navy-800" data-i18n="svc.sales.t">RV Sales</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="svc.sales.d">Looking to buy or sell? Ask Mando about current RVs for sale and trade-in options.</p>
+              <p class="text-sm leading-relaxed text-slate-600" data-i18n="it.appl">A/C · Water heaters · Furnace · Washers &amp; dryers · Stoves · Microwaves · Refrigerators</p>
             </article>
           </div>
 
@@ -422,13 +440,32 @@
         </div>
       </section>
 
-      <!-- ===== OEM Brands ===== -->
+      <!-- ===== Mobile Service ===== -->
+      <section class="relative overflow-hidden bg-navy-800 py-16 text-white sm:py-24">
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-700 via-navy-900 to-navy-950"></div>
+        <div class="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-steel-400/20 blur-3xl" aria-hidden="true"></div>
+        <div class="absolute -right-20 -top-16 h-80 w-80 rounded-full bg-brand-orange/20 blur-3xl" aria-hidden="true"></div>
+        <div class="reveal relative mx-auto max-w-4xl px-4 text-center">
+          <span class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-brand-amber ring-1 ring-white/15">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l2-5h11l3 4h2v4h-2M5 17a2 2 0 104 0M15 17a2 2 0 104 0"/></svg>
+          </span>
+          <h2 class="mt-6 text-4xl font-extrabold uppercase tracking-tight sm:text-6xl" data-i18n="mobile.title">Mobile Service</h2>
+          <p class="mt-3 text-2xl font-extrabold text-brand-amber sm:text-3xl" data-i18n="mobile.radius">100-Mile Radius</p>
+          <p class="mt-3 text-slate-300" data-i18n="mobile.note">Service call fee varies based on your area.</p>
+          <a href="tel:+19565227058" class="pulse mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-brand-amber">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>
+            <span data-i18n="hero.cta">Call to Schedule</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== OEM Parts ===== -->
       <section id="brands" class="relative overflow-hidden bg-navy-900 py-16 text-white sm:py-20">
         <div class="absolute -right-24 top-0 h-72 w-72 rounded-full bg-brand-orange/10 blur-3xl" aria-hidden="true"></div>
         <div class="relative mx-auto max-w-6xl px-4">
           <div class="reveal mx-auto max-w-2xl text-center">
-            <p class="text-sm font-bold uppercase tracking-widest text-brand-amber" data-i18n="brands.kicker">Parts &amp; brands</p>
-            <h2 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl" data-i18n="brands.title">Brands We Work With</h2>
+            <p class="text-sm font-bold uppercase tracking-widest text-brand-amber" data-i18n="brands.kicker">Genuine parts</p>
+            <h2 class="mt-2 text-3xl font-extrabold uppercase tracking-tight sm:text-5xl" data-i18n="brands.title">OEM Parts</h2>
             <p class="mt-4 text-slate-300" data-i18n="brands.intro">We service and install genuine OEM parts from the RV industry's most trusted manufacturers.</p>
           </div>
 
@@ -612,10 +649,10 @@
           skip: "Skip to content",
           "nav.work": "Our Work", "nav.services": "Services", "nav.about": "Why Mando's", "nav.brands": "Brands", "nav.reviews": "Reviews", "nav.contact": "Contact",
           "lang.label": "Language", "cta.call": "Call",
-          "brands.kicker": "Parts & brands", "brands.title": "Brands We Work With", "brands.intro": "We service and install genuine OEM parts from the RV industry's most trusted manufacturers.", "brands.note": "Don't see your brand? We work with most major RV manufacturers — just ask.",
+          "brands.kicker": "Genuine parts", "brands.title": "OEM Parts", "brands.intro": "We service and install genuine OEM parts from the RV industry's most trusted manufacturers.", "brands.note": "Don't see your brand? We work with most major RV manufacturers — just ask.",
           "hero.title": "Expert Mobile & On-Site RV Repair in Mission, TX",
           "hero.subtitle": "From rotted roofs and water damage to flooring, electrical, A/C and plumbing — we rebuild it right. We've seen it all.",
-          "hero.cta": "Call to Schedule", "hero.cta2": "See Our Work",
+          "hero.cta": "Call to Schedule", "hero.cta2": "See Our Work", "hero.since": "Since 2016",
           "hero.note": "Appointment required · Onsite & mobile service available",
           "hero.badge": "Real jobs · Real results",
           "strip.roofs": "Rubber Roofs", "strip.water": "Water Damage", "strip.floors": "Flooring", "strip.electric": "Electrical", "strip.ac": "A/C & Furnace", "strip.plumbing": "Plumbing", "strip.sales": "RV Sales",
@@ -625,7 +662,15 @@
           "work.floor.title": "Water Damage Floor Replacement",
           "work.floor.s1": "Black, rotted subfloor", "work.floor.s2": "Damaged flooring removed", "work.floor.s3": "Solid new subfloor", "work.floor.s4": "Beautiful finished interior",
           "step.before": "Before", "step.after": "After", "step.step2": "Step 2", "step.step3": "Step 3",
-          "services.kicker": "What we do", "services.title": "Our RV Services", "services.intro": "One shop for everything your RV needs — repairs, upgrades, diagnostics and sales.",
+          "services.kicker": "What we do", "services.title": "We Offer a Variety of Services", "services.intro": "One shop for everything your RV needs — repairs, upgrades, diagnostics and sales.",
+          "cat.elec": "Electrical & Appliances", "lbl.12v": "12V", "lbl.120v": "120V", "lbl.acs": "Air Conditioners",
+          "it.e12v": "Converters · Inverters · Re-Route Wiring", "it.e120v": "Lights · Harnesses · Chargers", "it.eac": "RV · Fifth Wheels · Class A/B/C Coaches",
+          "cat.plumb": "Plumbing & Tanks", "it.plumb": "Fresh & gray tank repairs · Filtration · Pumps · Installations",
+          "cat.acc": "A/C & Controls", "it.acc": "Roof-top & ducted A/C service · Thermostat upgrades · Smart monitoring · Installations",
+          "cat.roof": "Roofs & Sealant", "it.roof": "Roof sealing · Leak detection · Roof replacement · Vent sealing · Skylight replacement",
+          "cat.slide": "Slide-Outs & Awnings", "it.slide": "Slide-out seals · Gears & motors · Awning fabrics · LED lights",
+          "cat.appl": "Appliances", "it.appl": "A/C · Water heaters · Furnace · Washers & dryers · Stoves · Microwaves · Refrigerators",
+          "mobile.title": "Mobile Service", "mobile.radius": "100-Mile Radius", "mobile.note": "Service call fee varies based on your area.",
           "svc.roof.t": "Rubber Roofs & Roof Rebuilds", "svc.roof.d": "Leak repair, resealing and full rubber-roof replacement to stop water damage for good.",
           "svc.water.t": "Water Damage & Flooring", "svc.water.d": "Rotted subfloors, soft spots and water lines repaired and rebuilt with solid new flooring.",
           "svc.elec.t": "Electrical (120v / 12v)", "svc.elec.d": "Troubleshooting and rewiring for both 120-volt and 12-volt systems, converters and lighting.",
@@ -654,10 +699,10 @@
           skip: "Saltar al contenido",
           "nav.work": "Trabajos", "nav.services": "Servicios", "nav.about": "Por qué Mando's", "nav.brands": "Marcas", "nav.reviews": "Reseñas", "nav.contact": "Contacto",
           "lang.label": "Idioma", "cta.call": "Llamar",
-          "brands.kicker": "Partes y marcas", "brands.title": "Marcas con las que trabajamos", "brands.intro": "Damos servicio e instalamos partes OEM originales de los fabricantes más confiables de la industria de RV.", "brands.note": "¿No ve su marca? Trabajamos con la mayoría de los fabricantes de RV — solo pregunte.",
+          "brands.kicker": "Partes originales", "brands.title": "Partes OEM", "brands.intro": "Damos servicio e instalamos partes OEM originales de los fabricantes más confiables de la industria de RV.", "brands.note": "¿No ve su marca? Trabajamos con la mayoría de los fabricantes de RV — solo pregunte.",
           "hero.title": "Reparación de RV experta, móvil y en sitio en Mission, TX",
           "hero.subtitle": "Desde techos podridos y daños por agua hasta pisos, eléctrico, A/C y plomería — lo reconstruimos bien. Lo hemos visto todo.",
-          "hero.cta": "Llamar para agendar", "hero.cta2": "Ver nuestro trabajo",
+          "hero.cta": "Llamar para agendar", "hero.cta2": "Ver nuestro trabajo", "hero.since": "Desde 2016",
           "hero.note": "Cita requerida · Servicio en sitio y móvil disponible",
           "hero.badge": "Trabajos reales · Resultados reales",
           "strip.roofs": "Techos de hule", "strip.water": "Daño por agua", "strip.floors": "Pisos", "strip.electric": "Eléctrico", "strip.ac": "A/C y calefacción", "strip.plumbing": "Plomería", "strip.sales": "Venta de RV",
@@ -667,7 +712,15 @@
           "work.floor.title": "Reemplazo de piso por daño de agua",
           "work.floor.s1": "Subpiso negro y podrido", "work.floor.s2": "Piso dañado removido", "work.floor.s3": "Subpiso nuevo y firme", "work.floor.s4": "Interior terminado y hermoso",
           "step.before": "Antes", "step.after": "Después", "step.step2": "Paso 2", "step.step3": "Paso 3",
-          "services.kicker": "Lo que hacemos", "services.title": "Nuestros servicios de RV", "services.intro": "Un solo taller para todo lo que su RV necesita — reparaciones, mejoras, diagnóstico y ventas.",
+          "services.kicker": "Lo que hacemos", "services.title": "Ofrecemos una variedad de servicios", "services.intro": "Un solo taller para todo lo que su RV necesita — reparaciones, mejoras, diagnóstico y ventas.",
+          "cat.elec": "Eléctrico y electrodomésticos", "lbl.12v": "12V", "lbl.120v": "120V", "lbl.acs": "Aires acondicionados",
+          "it.e12v": "Convertidores · Inversores · Recableado", "it.e120v": "Luces · Arneses · Cargadores", "it.eac": "RV · Quintas ruedas · Clases A/B/C",
+          "cat.plumb": "Plomería y tanques", "it.plumb": "Reparación de tanques limpio y gris · Filtración · Bombas · Instalaciones",
+          "cat.acc": "A/C y controles", "it.acc": "Servicio de A/C de techo y por ductos · Termostatos · Monitoreo inteligente · Instalaciones",
+          "cat.roof": "Techos y sellado", "it.roof": "Sellado de techo · Detección de fugas · Reemplazo de techo · Sellado de ventilas · Reemplazo de tragaluz",
+          "cat.slide": "Slide-outs y toldos", "it.slide": "Sellos de slide-out · Engranes y motores · Telas de toldo · Luces LED",
+          "cat.appl": "Electrodomésticos", "it.appl": "A/C · Calentadores de agua · Calefacción · Lavadoras y secadoras · Estufas · Microondas · Refrigeradores",
+          "mobile.title": "Servicio móvil", "mobile.radius": "Radio de 100 millas", "mobile.note": "La tarifa de viaje varía según su área.",
           "svc.roof.t": "Techos de hule y reconstrucción", "svc.roof.d": "Reparación de fugas, sellado y reemplazo completo de techo de hule para detener el daño por agua.",
           "svc.water.t": "Daño por agua y pisos", "svc.water.d": "Subpisos podridos, zonas blandas y líneas de agua reparadas y reconstruidas con piso nuevo.",
           "svc.elec.t": "Eléctrico (120v / 12v)", "svc.elec.d": "Diagnóstico y recableado para sistemas de 120 y 12 voltios, convertidores e iluminación.",
@@ -696,10 +749,10 @@
           skip: "Aller au contenu",
           "nav.work": "Nos travaux", "nav.services": "Services", "nav.about": "Pourquoi Mando's", "nav.brands": "Marques", "nav.reviews": "Avis", "nav.contact": "Contact",
           "lang.label": "Langue", "cta.call": "Appeler",
-          "brands.kicker": "Pièces et marques", "brands.title": "Les marques avec lesquelles nous travaillons", "brands.intro": "Nous installons et réparons des pièces OEM d'origine des fabricants les plus fiables de l'industrie du VR.", "brands.note": "Vous ne voyez pas votre marque ? Nous travaillons avec la plupart des fabricants de VR — demandez-nous.",
+          "brands.kicker": "Pièces d'origine", "brands.title": "Pièces OEM", "brands.intro": "Nous installons et réparons des pièces OEM d'origine des fabricants les plus fiables de l'industrie du VR.", "brands.note": "Vous ne voyez pas votre marque ? Nous travaillons avec la plupart des fabricants de VR — demandez-nous.",
           "hero.title": "Réparation de VR experte, mobile et sur place à Mission, TX",
           "hero.subtitle": "Des toits pourris et dégâts d'eau aux planchers, à l'électricité, la climatisation et la plomberie — on reconstruit comme il faut. On a tout vu.",
-          "hero.cta": "Appeler pour un rendez-vous", "hero.cta2": "Voir nos travaux",
+          "hero.cta": "Appeler pour un rendez-vous", "hero.cta2": "Voir nos travaux", "hero.since": "Depuis 2016",
           "hero.note": "Rendez-vous requis · Service sur place et mobile disponible",
           "hero.badge": "Vrais travaux · Vrais résultats",
           "strip.roofs": "Toits en caoutchouc", "strip.water": "Dégâts d'eau", "strip.floors": "Planchers", "strip.electric": "Électricité", "strip.ac": "Clim & chauffage", "strip.plumbing": "Plomberie", "strip.sales": "Vente de VR",
@@ -709,7 +762,15 @@
           "work.floor.title": "Remplacement de plancher (dégâts d'eau)",
           "work.floor.s1": "Sous-plancher noir et pourri", "work.floor.s2": "Plancher endommagé retiré", "work.floor.s3": "Nouveau sous-plancher solide", "work.floor.s4": "Intérieur fini magnifique",
           "step.before": "Avant", "step.after": "Après", "step.step2": "Étape 2", "step.step3": "Étape 3",
-          "services.kicker": "Ce que nous faisons", "services.title": "Nos services VR", "services.intro": "Un seul atelier pour tout ce dont votre VR a besoin — réparations, améliorations, diagnostics et ventes.",
+          "services.kicker": "Ce que nous faisons", "services.title": "Nous offrons une variété de services", "services.intro": "Un seul atelier pour tout ce dont votre VR a besoin — réparations, améliorations, diagnostics et ventes.",
+          "cat.elec": "Électricité & appareils", "lbl.12v": "12V", "lbl.120v": "120V", "lbl.acs": "Climatiseurs",
+          "it.e12v": "Convertisseurs · Onduleurs · Recâblage", "it.e120v": "Éclairage · Faisceaux · Chargeurs", "it.eac": "VR · Sellettes · Classes A/B/C",
+          "cat.plumb": "Plomberie & réservoirs", "it.plumb": "Réparation réservoirs eau propre et grise · Filtration · Pompes · Installations",
+          "cat.acc": "Clim & commandes", "it.acc": "Service clim de toit et gainée · Thermostats · Surveillance intelligente · Installations",
+          "cat.roof": "Toits & scellant", "it.roof": "Étanchéité du toit · Détection de fuites · Remplacement de toit · Scellement des évents · Remplacement de puits de lumière",
+          "cat.slide": "Extensions & auvents", "it.slide": "Joints d'extension · Engrenages & moteurs · Toiles d'auvent · Éclairage LED",
+          "cat.appl": "Électroménagers", "it.appl": "Clim · Chauffe-eau · Chauffage · Laveuses & sécheuses · Cuisinières · Micro-ondes · Réfrigérateurs",
+          "mobile.title": "Service mobile", "mobile.radius": "Rayon de 100 milles", "mobile.note": "Les frais de déplacement varient selon votre région.",
           "svc.roof.t": "Toits en caoutchouc & reconstruction", "svc.roof.d": "Réparation de fuites, étanchéité et remplacement complet du toit pour stopper les dégâts d'eau.",
           "svc.water.t": "Dégâts d'eau & planchers", "svc.water.d": "Sous-planchers pourris, zones molles et conduites d'eau réparés et reconstruits avec un plancher neuf.",
           "svc.elec.t": "Électricité (120v / 12v)", "svc.elec.d": "Dépannage et recâblage pour les systèmes 120 et 12 volts, convertisseurs et éclairage.",
