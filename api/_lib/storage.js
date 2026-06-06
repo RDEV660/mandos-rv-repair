@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { put, list } from '@vercel/blob';
+import { put, get } from '@vercel/blob';
+import { BLOB_ACCESS, streamToText } from './blob.js';
 import siteContentDefault from '../../data/site-content.json' with { type: 'json' };
 
 const LIVE_FILE = 'data/site-content-live.json';
@@ -21,12 +22,12 @@ function writeJsonFile(filePath, data) {
 async function readFromBlob() {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return null;
   try {
-    const { blobs } = await list({ prefix: 'mandos/', token: process.env.BLOB_READ_WRITE_TOKEN });
-    const hit = blobs.find((b) => b.pathname === BLOB_PATHNAME) || blobs[0];
-    if (!hit) return null;
-    const res = await fetch(hit.url);
-    if (!res.ok) return null;
-    return res.json();
+    const result = await get(BLOB_PATHNAME, {
+      access: BLOB_ACCESS,
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    });
+    if (!result || result.statusCode !== 200 || !result.stream) return null;
+    return JSON.parse(await streamToText(result.stream));
   } catch {
     return null;
   }
@@ -44,7 +45,7 @@ async function readFromStatic() {
 async function writeToBlob(data) {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return false;
   await put(BLOB_PATHNAME, JSON.stringify(data), {
-    access: 'public',
+    access: BLOB_ACCESS,
     addRandomSuffix: false,
     token: process.env.BLOB_READ_WRITE_TOKEN,
     allowOverwrite: true,

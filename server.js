@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import authHandler from './api/auth.js';
 import contentHandler from './api/content.js';
 import uploadHandler from './api/upload.js';
+import mediaHandler from './api/media.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3000;
@@ -99,6 +100,11 @@ const server = http.createServer(async (req, res) => {
     const body = await readBody(req);
     const { mockReq, mockRes } = mockReqRes(req, res, body);
     return uploadHandler(mockReq, mockRes);
+  }
+  if (url.pathname === '/api/media' && req.method === 'GET') {
+    const { mockReq, mockRes } = mockReqRes(req, res, {});
+    mockReq.url = req.url;
+    return mediaHandler(mockReq, mockRes);
   }
 
   serveStatic(req, res);

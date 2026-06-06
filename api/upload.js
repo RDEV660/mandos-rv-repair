@@ -2,6 +2,7 @@ import { put } from '@vercel/blob';
 import fs from 'fs';
 import path from 'path';
 import { verifyToken } from './_lib/auth.js';
+import { BLOB_ACCESS, mediaUrl } from './_lib/blob.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,12 +26,14 @@ export default async function handler(req, res) {
 
   try {
     if (process.env.BLOB_READ_WRITE_TOKEN) {
-      const blob = await put(`mandos/${sub}/${Date.now()}-${safeName}${ext}`, buffer, {
-        access: 'public',
+      const pathname = `mandos/${sub}/${Date.now()}-${safeName}${ext}`;
+      const blob = await put(pathname, buffer, {
+        access: BLOB_ACCESS,
         token: process.env.BLOB_READ_WRITE_TOKEN,
         contentType: dataUrl.slice(5, dataUrl.indexOf(';')),
       });
-      return res.status(200).json({ url: blob.url, path: blob.url });
+      const url = mediaUrl(blob.pathname);
+      return res.status(200).json({ url, path: url, pathname: blob.pathname });
     }
 
     // Local dev: save under assets/uploads
