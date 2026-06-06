@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { put, list } from '@vercel/blob';
+import siteContentDefault from '../../data/site-content.json' with { type: 'json' };
 
 const LIVE_FILE = 'data/site-content-live.json';
 const DEFAULT_FILE = 'data/site-content.json';
@@ -31,6 +32,15 @@ async function readFromBlob() {
   }
 }
 
+async function readFromStatic() {
+  const host = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : process.env.SITE_URL || 'http://localhost:3000';
+  const res = await fetch(`${host}/data/site-content.json`, { cache: 'no-store' });
+  if (!res.ok) return null;
+  return res.json();
+}
+
 async function writeToBlob(data) {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return false;
   await put(BLOB_PATHNAME, JSON.stringify(data), {
@@ -46,16 +56,32 @@ export async function getContent() {
   const fromBlob = await readFromBlob();
   if (fromBlob) return fromBlob;
 
-  const livePath = path.join(process.cwd(), LIVE_FILE);
-  if (fs.existsSync(livePath)) {
+  // Local dev: prefer live saves on disk
+  if (process.env.VERCEL !== '1') {
+    const livePath = path.join(process.cwd(), LIVE_FILE);
+    if (fs.existsSync(livePath)) {
+      try {
+        return readJsonFile(LIVE_FILE);
+      } catch {
+        /* fall through */
+      }
+    }
     try {
-      return readJsonFile(LIVE_FILE);
+      return readJsonFile(DEFAULT_FILE);
     } catch {
       /* fall through */
     }
   }
 
-  return readJsonFile(DEFAULT_FILE);
+  // Vercel: bundled default, then static file on same deployment
+  try {
+    const fromStatic = await readFromStatic();
+    if (fromStatic) return fromStatic;
+  } catch {
+    /* fall through */
+  }
+
+  return siteContentDefault;
 }
 
 export async function saveContent(data) {
