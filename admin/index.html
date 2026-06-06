@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Owner Dashboard | Mando's RV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: { 800: '#102e58', 900: '#0a2143', 950: '#061730' },
+              brand: { orange: '#ef7a26', amber: '#ffb061' },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-100 text-slate-800">
+
+    <!-- Login -->
+    <div id="loginScreen" class="flex min-h-screen items-center justify-center px-4">
+      <form id="loginForm" class="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl ring-1 ring-slate-200">
+        <img src="../assets/mandos-logo.png" alt="" class="mx-auto mb-6 h-24 w-auto object-contain" />
+        <h1 class="text-center text-2xl font-extrabold text-navy-800">Owner Login</h1>
+        <p class="mt-2 text-center text-sm text-slate-500">Update photos, text, colors &amp; logo for your website.</p>
+        <label class="mt-6 block text-sm font-bold text-navy-800" for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" required autocomplete="current-password"
+          class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30" />
+        <button type="submit" class="mt-6 w-full rounded-xl bg-brand-orange py-3.5 text-base font-bold text-white shadow-lg hover:bg-brand-amber">
+          Sign In
+        </button>
+        <p class="mt-4 text-center text-xs text-slate-400"><a href="/" class="hover:text-brand-orange">← Back to website</a></p>
+      </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+      <header class="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+          <div>
+            <h1 class="text-lg font-extrabold text-navy-800">Mando's Website Dashboard</h1>
+            <p class="text-xs text-slate-500">Edit content · Upload photos · Save when done</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="btnPreview" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-50">Preview Site</button>
+            <button type="button" id="btnSave" class="rounded-lg bg-brand-orange px-5 py-2 text-sm font-bold text-white shadow hover:bg-brand-amber">Save All Changes</button>
+            <button type="button" id="btnLogout" class="rounded-lg bg-slate-200 px-4 py-2 text-sm font-semibold hover:bg-slate-300">Log Out</button>
+          </div>
+        </div>
+        <nav class="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 pb-3">
+          <button type="button" data-tab="brand" class="tab-btn shrink-0 rounded-lg bg-navy-800 px-4 py-2 text-sm font-bold text-white">Logo &amp; Colors</button>
+          <button type="button" data-tab="contact" class="tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-bold text-navy-800 ring-1 ring-slate-200">Contact</button>
+          <button type="button" data-tab="hero" class="tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-bold text-navy-800 ring-1 ring-slate-200">Hero Text</button>
+          <button type="button" data-tab="slides" class="tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-bold text-navy-800 ring-1 ring-slate-200">Hero Photos</button>
+          <button type="button" data-tab="work" class="tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-bold text-navy-800 ring-1 ring-slate-200">Our Work</button>
+          <button type="button" data-tab="about" class="tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-bold text-navy-800 ring-1 ring-slate-200">About &amp; More</button>
+          <button type="button" data-tab="reviews" class="tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-bold text-navy-800 ring-1 ring-slate-200">Reviews</button>
+        </nav>
+      </header>
+
+      <main class="mx-auto max-w-6xl space-y-6 px-4 py-8">
+
+        <!-- Brand -->
+        <section id="panel-brand" class="tab-panel space-y-6">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Logo</h2>
+            <p class="mt-1 text-sm text-slate-500">Upload a new logo — it updates the header, hero, and footer.</p>
+            <div class="mt-4 flex flex-wrap items-center gap-6">
+              <img id="logoPreview" src="" alt="Logo preview" class="h-28 max-w-xs rounded-xl bg-slate-50 object-contain p-2 ring-1 ring-slate-200" />
+              <div class="space-y-3">
+                <input id="logoUpload" type="file" accept="image/*" class="block text-sm" />
+                <label class="block text-xs font-bold text-slate-500">Or paste image path</label>
+                <input id="inpLogoPath" type="text" class="w-full min-w-[16rem] rounded-lg border border-slate-300 px-3 py-2 text-sm" placeholder="assets/mandos-logo.png" />
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Brand Colors</h2>
+            <p class="mt-1 text-sm text-slate-500">Pick your navy and orange — changes apply across the site.</p>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <label class="block"><span class="text-xs font-bold text-slate-500">Navy (main)</span>
+                <input id="colorNavy800" type="color" class="mt-1 h-12 w-full cursor-pointer rounded-lg border border-slate-200" /></label>
+              <label class="block"><span class="text-xs font-bold text-slate-500">Orange (buttons)</span>
+                <input id="colorOrange" type="color" class="mt-1 h-12 w-full cursor-pointer rounded-lg border border-slate-200" /></label>
+              <label class="block"><span class="text-xs font-bold text-slate-500">Amber (highlights)</span>
+                <input id="colorAmber" type="color" class="mt-1 h-12 w-full cursor-pointer rounded-lg border border-slate-200" /></label>
+              <label class="block"><span class="text-xs font-bold text-slate-500">Light background</span>
+                <input id="colorCloud" type="color" class="mt-1 h-12 w-full cursor-pointer rounded-lg border border-slate-200" /></label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="panel-contact" class="tab-panel hidden space-y-4">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Phone &amp; Address</h2>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <label class="block text-sm font-semibold">Phone (display)<input id="inpPhone" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="(956) 522-7058" /></label>
+              <label class="block text-sm font-semibold">Phone (tap-to-call)<input id="inpPhoneTel" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="+19565227058" /></label>
+              <label class="block text-sm font-semibold sm:col-span-2">Full address line<input id="inpAddress" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+              <label class="block text-sm font-semibold">Street<input id="inpStreet" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+              <label class="block text-sm font-semibold">City<input id="inpCity" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+              <label class="block text-sm font-semibold">State<input id="inpState" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+              <label class="block text-sm font-semibold">ZIP<input id="inpZip" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hero text -->
+        <section id="panel-hero" class="tab-panel hidden space-y-4">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Homepage Headlines (English)</h2>
+            <div class="mt-4 space-y-4">
+              <label class="block text-sm font-semibold">Main headline<textarea data-field="hero.title" rows="2" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+              <label class="block text-sm font-semibold">Subtitle<textarea data-field="hero.subtitle" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+              <div class="grid gap-4 sm:grid-cols-3">
+                <label class="block text-sm font-semibold">Badge 1<input data-field="hero.badge1" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+                <label class="block text-sm font-semibold">Badge 2<input data-field="hero.badge2" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+                <label class="block text-sm font-semibold">Badge 3<input data-field="hero.badge3" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+              </div>
+              <label class="block text-sm font-semibold">Note under buttons<input data-field="hero.note" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hero slides -->
+        <section id="panel-slides" class="tab-panel hidden">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Hero Slideshow Photos</h2>
+            <p class="mt-1 text-sm text-slate-500">These rotate on the homepage. Upload or paste a path, then Save.</p>
+            <div id="heroSlidesList" class="mt-4 space-y-4"></div>
+          </div>
+        </section>
+
+        <!-- Work -->
+        <section id="panel-work" class="tab-panel hidden space-y-6">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Roof Project</h2>
+            <label class="mt-2 block text-sm font-semibold">Project title<input data-field="work.roof.title" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <div id="roofSteps" class="mt-4 grid gap-4 sm:grid-cols-2"></div>
+          </div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="text-lg font-bold text-navy-800">Floor Project</h2>
+            <label class="mt-2 block text-sm font-semibold">Project title<input data-field="work.floor.title" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <div id="floorSteps" class="mt-4 grid gap-4 sm:grid-cols-2"></div>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="panel-about" class="tab-panel hidden space-y-4">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 space-y-4">
+            <h2 class="text-lg font-bold text-navy-800">Section Titles &amp; Text</h2>
+            <label class="block text-sm font-semibold">Our Work — title<input data-field="work.title" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <label class="block text-sm font-semibold">Our Work — intro<textarea data-field="work.intro" rows="2" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+            <label class="block text-sm font-semibold">Why Mando's — title<input data-field="about.title" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <label class="block text-sm font-semibold">Why Mando's — paragraph<textarea data-field="about.body" rows="4" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+            <label class="block text-sm font-semibold">Services — title<input data-field="services.title" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <label class="block text-sm font-semibold">Contact — title<input data-field="contact.title" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <label class="block text-sm font-semibold">Contact — body<textarea data-field="contact.body" rows="2" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+            <label class="block text-sm font-semibold">Hours<input data-field="contact.hoursval" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <label class="block text-sm font-semibold">Pickup hours<input data-field="contact.pickup" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+            <label class="block text-sm font-semibold">Footer slogan<input data-field="footer.slogan" class="mt-1 w-full rounded-lg border px-3 py-2" /></label>
+          </div>
+        </section>
+
+        <!-- Reviews -->
+        <section id="panel-reviews" class="tab-panel hidden">
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 space-y-4">
+            <h2 class="text-lg font-bold text-navy-800">Customer Reviews</h2>
+            <label class="block text-sm font-semibold">Review 1<textarea id="review1" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+            <label class="block text-sm font-semibold">Review 2<textarea id="review2" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+            <label class="block text-sm font-semibold">Review 3<textarea id="review3" rows="3" class="mt-1 w-full rounded-lg border px-3 py-2"></textarea></label>
+          </div>
+        </section>
+
+        <div class="rounded-xl bg-amber-50 p-4 text-sm text-amber-900 ring-1 ring-amber-200">
+          <strong>Remember:</strong> Click <strong>Save All Changes</strong> when you're done. Then refresh the main website to see updates.
+        </div>
+      </main>
+    </div>
+
+    <p id="toast" class="hidden" role="status"></p>
+    <script src="admin.js"></script>
+  </body>
+</html>

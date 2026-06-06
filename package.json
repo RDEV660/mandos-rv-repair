@@ -1,0 +1,12 @@
+{
+  "name": "mandos-rv-repair",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.27.0"
+  }
+}

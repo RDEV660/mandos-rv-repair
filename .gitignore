@@ -9,3 +9,8 @@ desktop.ini
 
 # Logs
 *.log
+
+# Dependencies & local CMS saves
+node_modules/
+data/site-content-live.json
+assets/uploads/

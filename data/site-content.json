@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "theme": {
+    "navy700": "#22548f",
+    "navy800": "#102e58",
+    "navy900": "#0a2143",
+    "navy950": "#061730",
+    "brandOrange": "#ef7a26",
+    "brandAmber": "#ffb061",
+    "cloud": "#eef3fa"
+  },
+  "logo": "assets/mandos-logo.png",
+  "contact": {
+    "phone": "(956) 522-7058",
+    "phoneTel": "+19565227058",
+    "addressLine": "8438 Alton Springs St, Mission, TX 78574",
+    "street": "8438 Alton Springs St",
+    "city": "Mission",
+    "state": "TX",
+    "zip": "78574"
+  },
+  "heroSlides": [
+    { "src": "assets/work/roof-1-before.png", "alt": "Rotted RV roof decking before repair" },
+    { "src": "assets/work/roof-4-after.png", "alt": "Freshly sealed RV rubber roof after repair" },
+    { "src": "assets/work/floor-1-before.png", "alt": "Water-damaged RV subfloor before repair" },
+    { "src": "assets/work/floor-4-after.png", "alt": "Finished RV interior with new flooring" },
+    { "src": "assets/work/roof-3-newdeck.png", "alt": "New plywood roof decking installed" }
+  ],
+  "work": {
+    "roof": [
+      { "src": "assets/work/roof-1-before.png", "alt": "Rotted RV roof decking", "caption": "Rotted, water-soaked decking" },
+      { "src": "assets/work/roof-2-teardown.png", "alt": "Roof torn down to insulation", "caption": "Tear-out down to the frame" },
+      { "src": "assets/work/roof-3-newdeck.png", "alt": "New plywood roof decking", "caption": "Brand-new decking installed" },
+      { "src": "assets/work/roof-4-after.png", "alt": "Sealed rubber roof finished", "caption": "Sealed & watertight" }
+    ],
+    "floor": [
+      { "src": "assets/work/floor-1-before.png", "alt": "Water-damaged RV subfloor", "caption": "Black, rotted subfloor" },
+      { "src": "assets/work/floor-2-teardown.png", "alt": "Floor torn out to the frame", "caption": "Damaged flooring removed" },
+      { "src": "assets/work/floor-3-newsubfloor.png", "alt": "New plywood subfloor installed", "caption": "Solid new subfloor" },
+      { "src": "assets/work/floor-4-after.png", "alt": "Finished RV interior with new flooring", "caption": "Beautiful finished interior" }
+    ]
+  },
+  "reviews": [
+    "I sent Mando photos of my roof and he pre-diagnosed the problem before he even arrived. Fast, accurate, no surprises.",
+    "Called in the morning and he got out to us quickly. Fixed our water-damaged floor and it looks brand new. Highly recommend.",
+    "Honest and knowledgeable. He explained exactly what was wrong and fixed it right the first time."
+  ],
+  "text": {
+    "en": {
+      "hero.title": "Expert Mobile & On-Site RV Repair in Mission, TX",
+      "hero.subtitle": "From rotted roofs and water damage to flooring, electrical, A/C and plumbing — we rebuild it right. We've seen it all.",
+      "hero.badge1": "20+ Years Experience",
+      "hero.badge2": "Family Run & Operated",
+      "hero.badge3": "Mission, TX",
+      "hero.note": "Appointment required · Onsite & mobile service · All insurance types accepted",
+      "work.title": "See the Work, Step by Step",
+      "work.intro": "Real RVs we brought back to life — from tear-down to finished. Tap any photo to enlarge.",
+      "work.roof.title": "Roof Replacement",
+      "work.floor.title": "Water Damage Floor Replacement",
+      "about.title": "Why Mando's",
+      "about.body": "Family run and operated with more than 20 years of experience. We work with all types of insurance. Run by Armando (\"Mando\"), a hands-on mechanic who treats every RV like his own — honest work, real diagnostics, and a simple promise: we've seen it all.",
+      "services.title": "We Offer a Variety of Services",
+      "contact.title": "Visit or Call Us",
+      "contact.body": "Appointment required — call ahead and we'll get your RV scheduled. Mobile service available across the Rio Grande Valley.",
+      "contact.hoursval": "Mon 9–5 · Tue–Fri 8–5 · Sat 8–2 · Sun closed",
+      "contact.pickup": "Pickup: Mon–Fri 9 AM – 5 PM",
+      "footer.slogan": "\"We've seen it all.\"",
+      "rev.q1": "\"I sent Mando photos of my roof and he pre-diagnosed the problem before he even arrived. Fast, accurate, no surprises.\"",
+      "rev.q2": "\"Called in the morning and he got out to us quickly. Fixed our water-damaged floor and it looks brand new. Highly recommend.\"",
+      "rev.q3": "\"Honest and knowledgeable. He explained exactly what was wrong and fixed it right the first time.\""
+    },
+    "es": {
+      "hero.title": "Reparación de RV experta, móvil y en sitio en Mission, TX",
+      "hero.subtitle": "Desde techos podridos y daños por agua hasta pisos, eléctrico, A/C y plomería — lo reconstruimos bien. Lo hemos visto todo.",
+      "hero.badge1": "Más de 20 años de experiencia",
+      "hero.badge2": "Dirigido y operado por la familia",
+      "hero.badge3": "Mission, TX",
+      "hero.note": "Cita requerida · Servicio en sitio y móvil · Aceptamos todo tipo de seguros",
+      "work.title": "Vea el trabajo, paso a paso",
+      "work.intro": "RVs reales que revivimos — desde el desmontaje hasta el acabado. Toque cualquier foto para ampliar.",
+      "work.roof.title": "Reemplazo de techo",
+      "work.floor.title": "Reemplazo de piso por daño de agua",
+      "about.title": "Por qué Mando's",
+      "about.body": "Dirigido y operado por la familia con más de 20 años de experiencia. Trabajamos con todo tipo de seguros. Armando (\"Mando\") es un mecánico práctico que trata cada RV como suyo — trabajo honesto, diagnóstico real y una promesa simple: lo hemos visto todo.",
+      "services.title": "Ofrecemos una variedad de servicios",
+      "contact.title": "Visítenos o llame",
+      "contact.body": "Cita requerida — llame antes y agendamos su RV. Servicio móvil disponible en todo el Valle del Río Grande.",
+      "contact.hoursval": "Lun 9–5 · Mar–Vie 8–5 · Sáb 8–2 · Dom cerrado",
+      "contact.pickup": "Recolección: Lun–Vie 9 AM – 5 PM",
+      "footer.slogan": "\"Lo hemos visto todo.\"",
+      "rev.q1": "\"Le envié a Mando fotos de mi techo y diagnosticó el problema antes de llegar. Rápido, preciso y sin sorpresas.\"",
+      "rev.q2": "\"Llamé en la mañana y vino rápido. Reparó mi piso dañado por agua y quedó como nuevo. Muy recomendado.\"",
+      "rev.q3": "\"Honesto y con conocimiento. Me explicó exactamente qué estaba mal y lo arregló bien a la primera.\""
+    },
+    "fr": {
+      "hero.title": "Réparation de VR experte, mobile et sur place à Mission, TX",
+      "hero.subtitle": "Des toits pourris et dégâts d'eau aux planchers, à l'électricité, la climatisation et la plomberie — on reconstruit comme il faut. On a tout vu.",
+      "hero.badge1": "Plus de 20 ans d'expérience",
+      "hero.badge2": "Géré et exploité en famille",
+      "hero.badge3": "Mission, TX",
+      "hero.note": "Rendez-vous requis · Service sur place et mobile · Tous types d'assurances acceptés",
+      "work.title": "Voyez le travail, étape par étape",
+      "work.intro": "De vrais VR que nous avons restaurés — du démontage à la finition. Touchez une photo pour l'agrandir.",
+      "work.roof.title": "Remplacement de toit",
+      "work.floor.title": "Remplacement de plancher (dégâts d'eau)",
+      "about.title": "Pourquoi Mando's",
+      "about.body": "Géré et exploité en famille avec plus de 20 ans d'expérience. Nous travaillons avec tous les types d'assurances. Armando (\"Mando\") est un mécanicien sur place qui traite chaque VR comme le sien — travail honnête, vrais diagnostics et une promesse simple : on a tout vu.",
+      "services.title": "Nous offrons une variété de services",
+      "contact.title": "Visitez ou appelez-nous",
+      "contact.body": "Rendez-vous requis — appelez à l'avance et nous planifierons votre VR. Service mobile disponible dans toute la vallée du Rio Grande.",
+      "contact.hoursval": "Lun 9–5 · Mar–Ven 8–5 · Sam 8–2 · Dim fermé",
+      "contact.pickup": "Ramassage : Lun–Ven 9h – 17h",
+      "footer.slogan": "\"On a tout vu.\"",
+      "rev.q1": "\"J'ai envoyé à Mando des photos de mon toit et il a diagnostiqué le problème avant même d'arriver. Rapide, précis, sans surprise.\"",
+      "rev.q2": "\"J'ai appelé le matin et il est venu vite. Il a réparé mon plancher abîmé par l'eau, comme neuf. Je recommande vivement.\"",
+      "rev.q3": "\"Honnête et compétent. Il m'a expliqué exactement le problème et l'a réparé du premier coup.\""
+    }
+  }
+}

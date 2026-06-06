@@ -53,7 +53,7 @@
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" },
           { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
         ],
-        "paymentAccepted": "Cash, Credit Card, Debit Card, Apple Pay",
+        "paymentAccepted": "Cash, Credit Card, Debit Card, Apple Pay, Synchrony Bank",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "RV Services",
@@ -161,11 +161,11 @@
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2 sm:gap-3 sm:px-4 sm:py-3">
         <div class="flex min-w-0 shrink items-center gap-2 sm:gap-3">
           <a href="#top" class="shrink-0" aria-label="Mando's RV Repair and Sales home">
-            <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales" class="site-logo" width="160" height="160" />
+            <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales" class="site-logo cms-logo" width="160" height="160" />
           </a>
           <div class="flex min-w-0 flex-col leading-tight">
             <a href="#top" class="truncate text-xs font-extrabold text-navy-800 hover:text-brand-orange sm:text-base">Mando's RV</a>
-            <a href="tel:+19565227058" class="text-sm font-bold text-brand-orange hover:underline sm:text-base">(956) 522-7058</a>
+            <a href="tel:+19565227058" class="text-sm font-bold text-brand-orange hover:underline sm:text-base"><span class="cms-phone-display">(956) 522-7058</span></a>
           </div>
         </div>
 
@@ -243,12 +243,12 @@
         <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:py-16 lg:grid-cols-2 lg:py-20">
           <div class="min-w-0 text-center lg:text-left">
             <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales — Mission, TX"
-              class="hero-logo mx-auto mb-4 drop-shadow-2xl lg:mx-0" width="320" height="320" />
+              class="hero-logo cms-logo mx-auto mb-4 drop-shadow-2xl lg:mx-0" width="320" height="320" />
             <a href="tel:+19565227058"
               class="mb-4 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-orange px-5 py-3 text-xl font-extrabold text-white shadow-lg shadow-brand-orange/30 transition hover:bg-brand-amber sm:text-2xl"
               aria-label="Call Mando's RV Repair at (956) 522-7058">
               <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>
-              (956) 522-7058
+              <span class="cms-phone-display">(956) 522-7058</span>
             </a>
             <div class="mb-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
               <span class="rounded-full bg-brand-orange/20 px-3 py-1.5 text-sm font-bold text-brand-amber ring-1 ring-white/15" data-i18n="hero.badge1">20+ Years Experience</span>
@@ -537,7 +537,11 @@
               <div class="mt-6 rounded-2xl bg-navy-800 p-6 text-white">
                 <p class="text-sm font-semibold uppercase tracking-wide text-brand-amber" data-i18n="pay.title">We accept</p>
                 <div class="mt-3 flex flex-wrap items-center gap-3" id="payLogos" aria-label="Accepted payment methods"></div>
-                <p class="mt-3 text-xs text-slate-300" data-i18n="pay.note">Credit &amp; debit cards · Apple Pay (NFC tap to pay)</p>
+                <div class="mt-4 rounded-lg bg-white px-4 py-3 shadow-sm">
+                  <p class="mb-2 text-xs font-bold uppercase tracking-wide text-slate-500" data-i18n="pay.synchrony.label">Financing through</p>
+                  <img src="assets/payments/synchrony.png" alt="Synchrony Bank" width="320" height="82" class="h-12 w-full max-w-xs object-contain object-left sm:h-14 sm:max-w-sm" loading="lazy" />
+                </div>
+                <p class="mt-3 text-xs text-slate-300" data-i18n="pay.note">Credit &amp; debit cards · Apple Pay · Synchrony Bank financing</p>
                 <p class="mt-3 text-sm font-semibold text-brand-amber" data-i18n="pay.insurance">We work with all types of insurance — call us with your claim details.</p>
               </div>
             </div>
@@ -630,14 +634,14 @@
                   <svg class="mt-1 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.3-7-11a7 7 0 1114 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
                   <div>
                     <dt class="text-sm font-semibold uppercase tracking-wide text-brand-amber" data-i18n="contact.addr">Address</dt>
-                    <dd><address class="not-italic text-white"><a href="https://www.google.com/maps/search/?api=1&query=8438+Alton+Springs+St+Mission+TX+78574" target="_blank" rel="noopener noreferrer" class="hover:text-brand-amber">8438 Alton Springs St, Mission, TX 78574</a></address></dd>
+                    <dd><address class="not-italic text-white"><a href="https://www.google.com/maps/search/?api=1&query=8438+Alton+Springs+St+Mission+TX+78574" target="_blank" rel="noopener noreferrer" class="cms-address hover:text-brand-amber">8438 Alton Springs St, Mission, TX 78574</a></address></dd>
                   </div>
                 </div>
                 <div class="flex items-start gap-4">
                   <svg class="mt-1 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>
                   <div>
                     <dt class="text-sm font-semibold uppercase tracking-wide text-brand-amber" data-i18n="contact.phone">Phone</dt>
-                    <dd><a href="tel:+19565227058" class="text-xl font-bold text-white hover:text-brand-amber">(956) 522-7058</a></dd>
+                    <dd><a href="tel:+19565227058" class="text-xl font-bold text-white hover:text-brand-amber"><span class="cms-phone-display">(956) 522-7058</span></a></dd>
                   </div>
                 </div>
                 <div class="flex items-start gap-4">
@@ -665,15 +669,21 @@
 
     <footer class="bg-navy-950 py-8 text-center text-sm text-slate-400">
       <div class="mx-auto max-w-6xl px-4">
-        <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales" class="site-logo mx-auto mb-4 opacity-90" width="160" height="160" />
+        <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales" class="site-logo cms-logo mx-auto mb-4 opacity-90" width="160" height="160" />
         <p>&copy; <span id="year">2026</span> Mando's RV Repair &amp; Sales · Mission, TX · <span data-i18n="footer.slogan">"We've seen it all."</span></p>
+        <p class="mt-4">
+          <a href="/admin/" class="inline-flex items-center gap-1.5 rounded-lg border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-400 transition hover:border-brand-orange hover:text-brand-orange">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Owner Login
+          </a>
+        </p>
       </div>
     </footer>
 
     <!-- Sticky mobile call bar -->
     <a href="tel:+19565227058" class="fixed inset-x-0 bottom-0 z-40 flex items-center justify-center gap-2 bg-brand-orange py-3.5 text-base font-bold text-white shadow-lg md:hidden">
       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>
-      <span data-i18n="cta.call">Call</span> (956) 522-7058
+      <span data-i18n="cta.call">Call</span> <span class="cms-phone-display">(956) 522-7058</span>
     </a>
 
     <!-- Lightbox -->
@@ -684,6 +694,7 @@
       <img id="lightboxImg" src="" alt="" class="max-h-[88vh] max-w-[92vw] rounded-xl shadow-2xl" />
     </div>
 
+    <script src="/js/cms-apply.js"></script>
     <script>
       /* ====== i18n ====== */
       var I18N = {
@@ -722,7 +733,7 @@
           "svc.sales.t": "RV Sales", "svc.sales.d": "Looking to buy or sell? Ask Mando about current RVs for sale and trade-in options.",
           "services.cta": "Talk to Mando about your RV",
           "about.kicker": "Why choose us", "about.title": "Why Mando's", "about.body": "Family run and operated with more than 20 years of experience. We work with all types of insurance. Run by Armando (\"Mando\"), a hands-on mechanic who treats every RV like his own — honest work, real diagnostics, and a simple promise: we've seen it all.",
-          "pay.title": "We accept", "pay.note": "Credit & debit cards · Apple Pay (NFC tap to pay)", "pay.insurance": "We work with all types of insurance — call us with your claim details.",
+          "pay.title": "We accept", "pay.synchrony.label": "Financing through", "pay.note": "Credit & debit cards · Apple Pay · Synchrony Bank financing", "pay.insurance": "We work with all types of insurance — call us with your claim details.",
           "feat.mobile.t": "Onsite & Mobile Service", "feat.mobile.d": "We come to you across the RGV.",
           "feat.wifi.t": "Free WiFi", "feat.wifi.d": "Stay connected while you wait.",
           "feat.restroom.t": "Public Restroom", "feat.restroom.d": "Clean facilities on-site.",
@@ -775,7 +786,7 @@
           "svc.sales.t": "Venta de RV", "svc.sales.d": "¿Quiere comprar o vender? Pregúntele a Mando por RVs disponibles y opciones de intercambio.",
           "services.cta": "Hable con Mando sobre su RV",
           "about.kicker": "Por qué elegirnos", "about.title": "Por qué Mando's", "about.body": "Dirigido y operado por la familia con más de 20 años de experiencia. Trabajamos con todo tipo de seguros. Armando (\"Mando\") es un mecánico práctico que trata cada RV como suyo — trabajo honesto, diagnóstico real y una promesa simple: lo hemos visto todo.",
-          "pay.title": "Aceptamos", "pay.note": "Tarjetas de crédito y débito · Apple Pay (pago sin contacto)", "pay.insurance": "Trabajamos con todo tipo de seguros — llámenos con los datos de su reclamo.",
+          "pay.title": "Aceptamos", "pay.synchrony.label": "Financiamiento con", "pay.note": "Tarjetas de crédito y débito · Apple Pay · Financiamiento Synchrony Bank", "pay.insurance": "Trabajamos con todo tipo de seguros — llámenos con los datos de su reclamo.",
           "feat.mobile.t": "Servicio en sitio y móvil", "feat.mobile.d": "Vamos a usted en todo el Valle.",
           "feat.wifi.t": "WiFi gratis", "feat.wifi.d": "Manténgase conectado mientras espera.",
           "feat.restroom.t": "Baño público", "feat.restroom.d": "Instalaciones limpias en sitio.",
@@ -828,7 +839,7 @@
           "svc.sales.t": "Vente de VR", "svc.sales.d": "Vous voulez acheter ou vendre ? Demandez à Mando les VR disponibles et les reprises.",
           "services.cta": "Parlez à Mando de votre VR",
           "about.kicker": "Pourquoi nous choisir", "about.title": "Pourquoi Mando's", "about.body": "Géré et exploité en famille avec plus de 20 ans d'expérience. Nous travaillons avec tous les types d'assurances. Armando (\"Mando\") est un mécanicien sur place qui traite chaque VR comme le sien — travail honnête, vrais diagnostics et une promesse simple : on a tout vu.",
-          "pay.title": "Nous acceptons", "pay.note": "Cartes de crédit et débit · Apple Pay (paiement sans contact)", "pay.insurance": "Nous travaillons avec tous les types d'assurances — appelez-nous avec votre réclamation.",
+          "pay.title": "Nous acceptons", "pay.synchrony.label": "Financement avec", "pay.note": "Cartes de crédit et débit · Apple Pay · Financement Synchrony Bank", "pay.insurance": "Nous travaillons avec tous les types d'assurances — appelez-nous avec votre réclamation.",
           "feat.mobile.t": "Service sur place et mobile", "feat.mobile.d": "On vient à vous dans toute la vallée.",
           "feat.wifi.t": "WiFi gratuit", "feat.wifi.d": "Restez connecté en attendant.",
           "feat.restroom.t": "Toilettes publiques", "feat.restroom.d": "Installations propres sur place.",
@@ -851,6 +862,7 @@
       (function () {
         var SUPPORTED = ["en", "es", "fr"];
 
+        function startApp() {
         function detectLang() {
           var saved = null;
           try { saved = localStorage.getItem("mando_lang"); } catch (e) {}
@@ -976,6 +988,19 @@
         document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLb(); });
 
         document.getElementById("year").textContent = new Date().getFullYear();
+        }
+
+        function boot() {
+          if (window.MandoCms) {
+            window.MandoCms.load()
+              .then(function (content) { I18N = window.MandoCms.apply(content, I18N); })
+              .catch(function () {})
+              .finally(startApp);
+          } else {
+            startApp();
+          }
+        }
+        boot();
       })();
     </script>
   </body>
