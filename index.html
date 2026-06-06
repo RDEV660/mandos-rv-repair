@@ -6,7 +6,7 @@
     <title>Mando's RV Repair &amp; Sales | Mobile RV Mechanic in Mission, TX</title>
     <meta
       name="description"
-      content="RV repair in Mission, TX. Mobile &amp; on-site RV mechanic serving the Rio Grande Valley: rubber roofs, water damage, flooring, electrical, A/C, plumbing, mechanical &amp; RV sales. Call (956) 522-7058."
+      content="RV repair in Mission, TX. Mobile &amp; on-site RV mechanic serving the Rio Grande Valley — all insurance types accepted. Rubber roofs, water damage, flooring, electrical, A/C, plumbing, mechanical &amp; RV sales. Call (956) 522-7058."
     />
     <meta name="theme-color" content="#13294B" />
     <link rel="canonical" href="https://mandosrvrepair.com/" />
@@ -20,21 +20,21 @@
       content="Mobile &amp; on-site RV repair in Mission, TX and the Rio Grande Valley. Roofs, flooring, electrical, A/C, plumbing, mechanical &amp; RV sales. We've seen it all."
     />
     <meta property="og:url" content="https://mandosrvrepair.com/" />
-    <meta property="og:image" content="assets/mandos-logo-horizontal.png" />
+    <meta property="og:image" content="assets/mandos-logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="assets/mandos-logo-horizontal.png" />
+    <meta name="twitter:image" content="assets/mandos-logo.png" />
 
-    <link rel="icon" href="assets/mandos-logo-emblem.png" />
+    <link rel="icon" href="assets/mandos-logo.png" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "AutoRepair",
         "name": "Mando's RV Repair & Sales",
-        "description": "RV repair and sales in Mission, TX. Mobile and on-site RV service across the Rio Grande Valley.",
+        "description": "RV repair and sales in Mission, TX. Mobile and on-site RV service across the Rio Grande Valley. We work with all types of insurance.",
         "url": "https://mandosrvrepair.com/",
         "telephone": "+1-956-522-7058",
-        "image": "assets/mandos-logo-horizontal.png",
+        "image": "assets/mandos-logo.png",
         "slogan": "We've seen it all.",
         "priceRange": "$$",
         "address": {
@@ -53,7 +53,7 @@
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" },
           { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
         ],
-        "paymentAccepted": "Cash, Credit Card, Debit Card, Apple Pay, Google Pay",
+        "paymentAccepted": "Cash, Credit Card, Debit Card, Apple Pay",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "RV Services",
@@ -93,7 +93,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <style>
-      html { scroll-behavior: smooth; }
+      html { scroll-behavior: smooth; overflow-x: hidden; }
+      body { overflow-x: hidden; max-width: 100%; }
       [id] { scroll-margin-top: 5.5rem; }
       .sr-only:not(:focus):not(:active) {
         position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -125,14 +126,22 @@
       .pulse { animation: pulsering 2.4s infinite; }
 
       /* Swiper hero */
-      .heroSwiper, .heroSwiper .swiper-slide { width: 100%; height: 100%; }
-      .heroSwiper .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+      .heroSwiper { overflow: hidden; width: 100%; max-width: 100%; }
+      .heroSwiper .swiper-slide { width: 100% !important; height: 100%; }
+      .heroSwiper .swiper-slide img { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: cover; }
       .heroSwiper .swiper-pagination-bullet { background: #ffffff; opacity: .5; }
       .heroSwiper .swiper-pagination-bullet-active { background: #ef7a26; opacity: 1; }
 
       /* Brand marquee (continuous linear scroll) */
+      .brandSwiper { overflow: hidden; max-width: 100%; }
       .brandSwiper .swiper-wrapper { transition-timing-function: linear !important; align-items: center; }
-      .brandSwiper .swiper-slide { display: flex; align-items: center; justify-content: center; }
+      .brandSwiper .swiper-slide { display: flex; align-items: center; justify-content: center; width: auto !important; }
+
+      /* Logo — scales cleanly on mobile */
+      .site-logo { max-height: 3rem; width: auto; max-width: 9rem; object-fit: contain; }
+      @media (min-width: 640px) { .site-logo { max-height: 3.25rem; max-width: 10rem; } }
+      .hero-logo { width: 100%; max-width: 17rem; height: auto; object-fit: contain; }
+      @media (min-width: 640px) { .hero-logo { max-width: 20rem; } }
 
       @media (prefers-reduced-motion: reduce) {
         .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -149,10 +158,16 @@
 
     <!-- ===== Header ===== -->
     <header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur transition-shadow">
-      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <a href="#top" class="flex items-center gap-3" aria-label="Mando's RV Repair and Sales home">
-          <img src="assets/mandos-logo-horizontal.png" alt="Mando's RV Repair & Sales logo" class="h-11 w-auto sm:h-12" />
-        </a>
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2 sm:gap-3 sm:px-4 sm:py-3">
+        <div class="flex min-w-0 shrink items-center gap-2 sm:gap-3">
+          <a href="#top" class="shrink-0" aria-label="Mando's RV Repair and Sales home">
+            <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales" class="site-logo" width="160" height="160" />
+          </a>
+          <div class="flex min-w-0 flex-col leading-tight">
+            <a href="#top" class="truncate text-xs font-extrabold text-navy-800 hover:text-brand-orange sm:text-base">Mando's RV</a>
+            <a href="tel:+19565227058" class="text-sm font-bold text-brand-orange hover:underline sm:text-base">(956) 522-7058</a>
+          </div>
+        </div>
 
         <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
           <a href="#work" data-i18n="nav.work" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Our Work</a>
@@ -163,12 +178,13 @@
           <a href="#contact" data-i18n="nav.contact" class="text-sm font-semibold text-navy-800 hover:text-brand-orange">Contact</a>
         </nav>
 
-        <div class="flex items-center gap-2">
+        <div class="flex shrink-0 items-center gap-2">
           <!-- Language switch -->
-          <div class="hidden items-center rounded-full bg-slate-100 p-0.5 sm:flex" role="group" aria-label="Language">
-            <button type="button" data-lang="en" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold text-slate-500">EN</button>
-            <button type="button" data-lang="es" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold text-slate-500">ES</button>
-            <button type="button" data-lang="fr" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold text-slate-500">FR</button>
+          <div class="hidden items-center gap-2 rounded-xl bg-slate-100 px-2 py-1.5 sm:flex" role="group" aria-labelledby="langLabelDesktop">
+            <span id="langLabelDesktop" class="text-sm font-bold text-navy-800" data-i18n="lang.label">Language</span>
+            <button type="button" data-lang="en" class="lang-btn min-h-[2.25rem] min-w-[2.25rem] rounded-lg px-3 py-1.5 text-sm font-bold text-slate-600">EN</button>
+            <button type="button" data-lang="es" class="lang-btn min-h-[2.25rem] min-w-[2.25rem] rounded-lg px-3 py-1.5 text-sm font-bold text-slate-600">ES</button>
+            <button type="button" data-lang="fr" class="lang-btn min-h-[2.25rem] min-w-[2.25rem] rounded-lg px-3 py-1.5 text-sm font-bold text-slate-600">FR</button>
           </div>
 
           <a href="tel:+19565227058"
@@ -185,6 +201,13 @@
         </div>
       </div>
 
+      <div class="flex items-center justify-center gap-3 border-t border-slate-100 bg-slate-50 px-3 py-2.5 sm:hidden" role="group" aria-labelledby="langLabelMobileBar">
+        <span id="langLabelMobileBar" class="text-base font-bold text-navy-800" data-i18n="lang.label">Language</span>
+        <button type="button" data-lang="en" class="lang-btn min-h-[2.75rem] min-w-[3.25rem] rounded-lg bg-white px-4 text-base font-bold text-slate-600 ring-1 ring-slate-200">EN</button>
+        <button type="button" data-lang="es" class="lang-btn min-h-[2.75rem] min-w-[3.25rem] rounded-lg bg-white px-4 text-base font-bold text-slate-600 ring-1 ring-slate-200">ES</button>
+        <button type="button" data-lang="fr" class="lang-btn min-h-[2.75rem] min-w-[3.25rem] rounded-lg bg-white px-4 text-base font-bold text-slate-600 ring-1 ring-slate-200">FR</button>
+      </div>
+
       <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden">
         <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3" aria-label="Mobile">
           <a href="#work" data-i18n="nav.work" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Our Work</a>
@@ -193,11 +216,13 @@
           <a href="#brands" data-i18n="nav.brands" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Brands</a>
           <a href="#reviews" data-i18n="nav.reviews" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Reviews</a>
           <a href="#contact" data-i18n="nav.contact" class="rounded-lg px-3 py-3 text-base font-semibold text-navy-800 hover:bg-slate-50">Contact</a>
-          <div class="mt-1 flex items-center gap-2 px-3">
-            <span class="text-xs font-bold uppercase text-slate-400" data-i18n="lang.label">Language</span>
-            <button type="button" data-lang="en" class="lang-btn rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">EN</button>
-            <button type="button" data-lang="es" class="lang-btn rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">ES</button>
-            <button type="button" data-lang="fr" class="lang-btn rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">FR</button>
+          <div class="mt-2 rounded-xl bg-slate-50 px-3 py-3" role="group" aria-labelledby="langLabelMobile">
+            <p id="langLabelMobile" class="mb-2 text-base font-bold text-navy-800" data-i18n="lang.label">Language</p>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" data-lang="en" class="lang-btn min-h-[2.75rem] flex-1 rounded-lg bg-white px-4 py-2 text-base font-bold text-slate-600 ring-1 ring-slate-200">English (EN)</button>
+              <button type="button" data-lang="es" class="lang-btn min-h-[2.75rem] flex-1 rounded-lg bg-white px-4 py-2 text-base font-bold text-slate-600 ring-1 ring-slate-200">Español (ES)</button>
+              <button type="button" data-lang="fr" class="lang-btn min-h-[2.75rem] flex-1 rounded-lg bg-white px-4 py-2 text-base font-bold text-slate-600 ring-1 ring-slate-200">Français (FR)</button>
+            </div>
           </div>
           <a href="tel:+19565227058" class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-5 py-3 text-base font-bold text-white">
             <span data-i18n="cta.call">Call</span> (956) 522-7058
@@ -216,19 +241,27 @@
         <div class="absolute -right-24 -top-24 h-[30rem] w-[30rem] rounded-full bg-brand-orange/25 blur-3xl" aria-hidden="true"></div>
 
         <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:py-16 lg:grid-cols-2 lg:py-20">
-          <div>
-            <img src="assets/mandos-logo-emblem.png" alt="Mando's RV Repair & Sales emblem"
-              class="floaty mb-4 h-28 w-auto drop-shadow-2xl sm:h-32" />
-            <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-amber ring-1 ring-white/15">
-              <span class="h-1.5 w-1.5 rounded-full bg-brand-orange"></span><span data-i18n="hero.since">Since 2016</span> · Mission, TX
-            </p>
+          <div class="min-w-0 text-center lg:text-left">
+            <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales — Mission, TX"
+              class="hero-logo mx-auto mb-4 drop-shadow-2xl lg:mx-0" width="320" height="320" />
+            <a href="tel:+19565227058"
+              class="mb-4 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-orange px-5 py-3 text-xl font-extrabold text-white shadow-lg shadow-brand-orange/30 transition hover:bg-brand-amber sm:text-2xl"
+              aria-label="Call Mando's RV Repair at (956) 522-7058">
+              <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>
+              (956) 522-7058
+            </a>
+            <div class="mb-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+              <span class="rounded-full bg-brand-orange/20 px-3 py-1.5 text-sm font-bold text-brand-amber ring-1 ring-white/15" data-i18n="hero.badge1">20+ Years Experience</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm font-bold text-white ring-1 ring-white/15" data-i18n="hero.badge2">Family Owned &amp; Controlled</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm font-bold text-white ring-1 ring-white/15" data-i18n="hero.badge3">Mission, TX</span>
+            </div>
             <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl" data-i18n="hero.title">
               Expert Mobile &amp; On-Site RV Repair in Mission, TX
             </h1>
             <p class="mt-5 max-w-xl text-lg text-slate-200" data-i18n="hero.subtitle">
               From rotted roofs and water damage to flooring, electrical, A/C and plumbing — we rebuild it right. We've seen it all.
             </p>
-            <div class="mt-8 flex flex-wrap items-center gap-4">
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
               <a href="tel:+19565227058"
                 class="pulse inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-base font-bold text-white shadow-lg transition hover:bg-brand-amber">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>
@@ -238,11 +271,11 @@
                 See Our Work
               </a>
             </div>
-            <p class="mt-4 text-sm text-slate-300" data-i18n="hero.note">Appointment required · Onsite &amp; mobile service available</p>
+            <p class="mt-4 text-sm text-slate-300" data-i18n="hero.note">Appointment required · Onsite &amp; mobile service · All insurance types accepted</p>
           </div>
 
           <!-- Sliding gallery box (Swiper) -->
-          <div class="relative">
+          <div class="relative min-w-0 w-full">
             <div class="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/15">
               <div class="swiper heroSwiper h-full w-full">
                 <div class="swiper-wrapper">
@@ -499,12 +532,13 @@
             <div class="reveal lg:col-span-5">
               <p class="text-sm font-bold uppercase tracking-widest text-brand-orange" data-i18n="about.kicker">Why choose us</p>
               <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy-800 sm:text-4xl" data-i18n="about.title">Why Mando's</h2>
-              <p class="mt-4 text-slate-600" data-i18n="about.body">Run by Armando ("Mando"), a hands-on, on-site mechanic who treats every RV like his own. Honest work, real diagnostics, and a simple promise: we've seen it all.</p>
+              <p class="mt-4 text-slate-600" data-i18n="about.body">Family owned and family controlled with more than 20 years of experience. We work with all types of insurance. Run by Armando ("Mando"), a hands-on mechanic who treats every RV like his own — honest work, real diagnostics, and a simple promise: we've seen it all.</p>
 
               <div class="mt-6 rounded-2xl bg-navy-800 p-6 text-white">
                 <p class="text-sm font-semibold uppercase tracking-wide text-brand-amber" data-i18n="pay.title">We accept</p>
                 <div class="mt-3 flex flex-wrap items-center gap-3" id="payLogos" aria-label="Accepted payment methods"></div>
-                <p class="mt-3 text-xs text-slate-300" data-i18n="pay.note">Credit &amp; debit cards · Apple Pay · Google Pay (NFC tap to pay)</p>
+                <p class="mt-3 text-xs text-slate-300" data-i18n="pay.note">Credit &amp; debit cards · Apple Pay (NFC tap to pay)</p>
+                <p class="mt-3 text-sm font-semibold text-brand-amber" data-i18n="pay.insurance">We work with all types of insurance — call us with your claim details.</p>
               </div>
             </div>
 
@@ -531,8 +565,16 @@
                   <div><p class="font-bold text-navy-800" data-i18n="feat.appt.t">Appointment Required</p><p class="text-sm text-slate-600" data-i18n="feat.appt.d">Call ahead so we're ready for you.</p></div>
                 </li>
                 <li class="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
-                  <svg class="mt-0.5 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  <div><p class="font-bold text-navy-800" data-i18n="feat.seen.t">We've Seen It All</p><p class="text-sm text-slate-600" data-i18n="feat.seen.d">Years of RGV RV experience.</p></div>
+                  <svg class="mt-0.5 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <div><p class="font-bold text-navy-800" data-i18n="feat.family.t">Family Owned &amp; Controlled</p><p class="text-sm text-slate-600" data-i18n="feat.family.d">A family business — the same people you call are the ones doing the work.</p></div>
+                </li>
+                <li class="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
+                  <svg class="mt-0.5 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <div><p class="font-bold text-navy-800" data-i18n="feat.experience.t">20+ Years of Experience</p><p class="text-sm text-slate-600" data-i18n="feat.experience.d">More than two decades repairing RVs across the Rio Grande Valley.</p></div>
+                </li>
+                <li class="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
+                  <svg class="mt-0.5 h-6 w-6 flex-none text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  <div><p class="font-bold text-navy-800" data-i18n="feat.insurance.t">All Insurance Types</p><p class="text-sm text-slate-600" data-i18n="feat.insurance.d">We work with every major insurance company — bring your claim and we'll take care of the rest.</p></div>
                 </li>
               </ul>
             </div>
@@ -623,7 +665,7 @@
 
     <footer class="bg-navy-950 py-8 text-center text-sm text-slate-400">
       <div class="mx-auto max-w-6xl px-4">
-        <img src="assets/mandos-logo-horizontal.png" alt="Mando's RV Repair & Sales" class="mx-auto mb-4 h-10 w-auto opacity-90" />
+        <img src="assets/mandos-logo.png" alt="Mando's RV Repair & Sales" class="site-logo mx-auto mb-4 opacity-90" width="160" height="160" />
         <p>&copy; <span id="year">2026</span> Mando's RV Repair &amp; Sales · Mission, TX · <span data-i18n="footer.slogan">"We've seen it all."</span></p>
       </div>
     </footer>
@@ -652,8 +694,9 @@
           "brands.kicker": "Genuine parts", "brands.title": "OEM Parts", "brands.intro": "We service and install genuine OEM parts from the RV industry's most trusted manufacturers.", "brands.note": "Don't see your brand? We work with most major RV manufacturers — just ask.",
           "hero.title": "Expert Mobile & On-Site RV Repair in Mission, TX",
           "hero.subtitle": "From rotted roofs and water damage to flooring, electrical, A/C and plumbing — we rebuild it right. We've seen it all.",
-          "hero.cta": "Call to Schedule", "hero.cta2": "See Our Work", "hero.since": "Since 2016",
-          "hero.note": "Appointment required · Onsite & mobile service available",
+          "hero.cta": "Call to Schedule", "hero.cta2": "See Our Work",
+          "hero.badge1": "20+ Years Experience", "hero.badge2": "Family Owned & Controlled", "hero.badge3": "Mission, TX",
+          "hero.note": "Appointment required · Onsite & mobile service · All insurance types accepted",
           "hero.badge": "Real jobs · Real results",
           "strip.roofs": "Rubber Roofs", "strip.water": "Water Damage", "strip.floors": "Flooring", "strip.electric": "Electrical", "strip.ac": "A/C & Furnace", "strip.plumbing": "Plumbing", "strip.sales": "RV Sales",
           "work.kicker": "Before & after", "work.title": "See the Work, Step by Step", "work.intro": "Real RVs we brought back to life — from tear-down to finished. Tap any photo to enlarge.",
@@ -678,14 +721,16 @@
           "svc.mech.t": "Plumbing & Mechanical", "svc.mech.d": "Plumbing, exhaust and mechanical troubleshooting — accurate diagnosis and honest fixes.",
           "svc.sales.t": "RV Sales", "svc.sales.d": "Looking to buy or sell? Ask Mando about current RVs for sale and trade-in options.",
           "services.cta": "Talk to Mando about your RV",
-          "about.kicker": "Why choose us", "about.title": "Why Mando's", "about.body": "Run by Armando (\"Mando\"), a hands-on, on-site mechanic who treats every RV like his own. Honest work, real diagnostics, and a simple promise: we've seen it all.",
-          "pay.title": "We accept", "pay.note": "Credit & debit cards · Apple Pay · Google Pay (NFC tap to pay)",
+          "about.kicker": "Why choose us", "about.title": "Why Mando's", "about.body": "Family owned and family controlled with more than 20 years of experience. We work with all types of insurance. Run by Armando (\"Mando\"), a hands-on mechanic who treats every RV like his own — honest work, real diagnostics, and a simple promise: we've seen it all.",
+          "pay.title": "We accept", "pay.note": "Credit & debit cards · Apple Pay (NFC tap to pay)", "pay.insurance": "We work with all types of insurance — call us with your claim details.",
           "feat.mobile.t": "Onsite & Mobile Service", "feat.mobile.d": "We come to you across the RGV.",
           "feat.wifi.t": "Free WiFi", "feat.wifi.d": "Stay connected while you wait.",
           "feat.restroom.t": "Public Restroom", "feat.restroom.d": "Clean facilities on-site.",
           "feat.mech.t": "On-Site Mechanic", "feat.mech.d": "Real diagnostics, not guesswork.",
           "feat.appt.t": "Appointment Required", "feat.appt.d": "Call ahead so we're ready for you.",
-          "feat.seen.t": "We've Seen It All", "feat.seen.d": "Years of RGV RV experience.",
+          "feat.family.t": "Family Owned & Controlled", "feat.family.d": "A family business — the same people you call are the ones doing the work.",
+          "feat.experience.t": "20+ Years of Experience", "feat.experience.d": "More than two decades repairing RVs across the Rio Grande Valley.",
+          "feat.insurance.t": "All Insurance Types", "feat.insurance.d": "We work with every major insurance company — bring your claim and we'll take care of the rest.",
           "rev.kicker": "Social proof", "rev.title": "Trusted by RV Owners",
           "rev.q1": "\"I sent Mando photos of my roof and he pre-diagnosed the problem before he even arrived. Fast, accurate, no surprises.\"",
           "rev.q2": "\"Called in the morning and he got out to us quickly. Fixed our water-damaged floor and it looks brand new. Highly recommend.\"",
@@ -702,8 +747,9 @@
           "brands.kicker": "Partes originales", "brands.title": "Partes OEM", "brands.intro": "Damos servicio e instalamos partes OEM originales de los fabricantes más confiables de la industria de RV.", "brands.note": "¿No ve su marca? Trabajamos con la mayoría de los fabricantes de RV — solo pregunte.",
           "hero.title": "Reparación de RV experta, móvil y en sitio en Mission, TX",
           "hero.subtitle": "Desde techos podridos y daños por agua hasta pisos, eléctrico, A/C y plomería — lo reconstruimos bien. Lo hemos visto todo.",
-          "hero.cta": "Llamar para agendar", "hero.cta2": "Ver nuestro trabajo", "hero.since": "Desde 2016",
-          "hero.note": "Cita requerida · Servicio en sitio y móvil disponible",
+          "hero.cta": "Llamar para agendar", "hero.cta2": "Ver nuestro trabajo",
+          "hero.badge1": "Más de 20 años de experiencia", "hero.badge2": "Negocio familiar", "hero.badge3": "Mission, TX",
+          "hero.note": "Cita requerida · Servicio en sitio y móvil · Aceptamos todo tipo de seguros",
           "hero.badge": "Trabajos reales · Resultados reales",
           "strip.roofs": "Techos de hule", "strip.water": "Daño por agua", "strip.floors": "Pisos", "strip.electric": "Eléctrico", "strip.ac": "A/C y calefacción", "strip.plumbing": "Plomería", "strip.sales": "Venta de RV",
           "work.kicker": "Antes y después", "work.title": "Vea el trabajo, paso a paso", "work.intro": "RVs reales que revivimos — desde el desmontaje hasta el acabado. Toque cualquier foto para ampliar.",
@@ -728,14 +774,16 @@
           "svc.mech.t": "Plomería y mecánica", "svc.mech.d": "Plomería, escape y diagnóstico mecánico — diagnóstico preciso y reparaciones honestas.",
           "svc.sales.t": "Venta de RV", "svc.sales.d": "¿Quiere comprar o vender? Pregúntele a Mando por RVs disponibles y opciones de intercambio.",
           "services.cta": "Hable con Mando sobre su RV",
-          "about.kicker": "Por qué elegirnos", "about.title": "Por qué Mando's", "about.body": "Dirigido por Armando (\"Mando\"), un mecánico práctico que trata cada RV como suyo. Trabajo honesto, diagnóstico real y una promesa simple: lo hemos visto todo.",
-          "pay.title": "Aceptamos", "pay.note": "Tarjetas de crédito y débito · Apple Pay · Google Pay (pago sin contacto)",
+          "about.kicker": "Por qué elegirnos", "about.title": "Por qué Mando's", "about.body": "Negocio familiar con más de 20 años de experiencia. Trabajamos con todo tipo de seguros. Dirigido por Armando (\"Mando\"), un mecánico práctico que trata cada RV como suyo — trabajo honesto, diagnóstico real y una promesa simple: lo hemos visto todo.",
+          "pay.title": "Aceptamos", "pay.note": "Tarjetas de crédito y débito · Apple Pay (pago sin contacto)", "pay.insurance": "Trabajamos con todo tipo de seguros — llámenos con los datos de su reclamo.",
           "feat.mobile.t": "Servicio en sitio y móvil", "feat.mobile.d": "Vamos a usted en todo el Valle.",
           "feat.wifi.t": "WiFi gratis", "feat.wifi.d": "Manténgase conectado mientras espera.",
           "feat.restroom.t": "Baño público", "feat.restroom.d": "Instalaciones limpias en sitio.",
           "feat.mech.t": "Mecánico en sitio", "feat.mech.d": "Diagnóstico real, no adivinanzas.",
           "feat.appt.t": "Cita requerida", "feat.appt.d": "Llame antes para estar listos para usted.",
-          "feat.seen.t": "Lo hemos visto todo", "feat.seen.d": "Años de experiencia con RVs en el Valle.",
+          "feat.family.t": "Negocio familiar", "feat.family.d": "Un negocio de familia — las mismas personas que atienden su llamada hacen el trabajo.",
+          "feat.experience.t": "Más de 20 años de experiencia", "feat.experience.d": "Más de dos décadas reparando RVs en todo el Valle del Río Grande.",
+          "feat.insurance.t": "Todo tipo de seguros", "feat.insurance.d": "Trabajamos con todas las compañías de seguros — traiga su reclamo y nosotros nos encargamos.",
           "rev.kicker": "Testimonios", "rev.title": "RV owners confían en nosotros",
           "rev.q1": "\"Le envié a Mando fotos de mi techo y diagnosticó el problema antes de llegar. Rápido, preciso y sin sorpresas.\"",
           "rev.q2": "\"Llamé en la mañana y vino rápido. Reparó mi piso dañado por agua y quedó como nuevo. Muy recomendado.\"",
@@ -752,8 +800,9 @@
           "brands.kicker": "Pièces d'origine", "brands.title": "Pièces OEM", "brands.intro": "Nous installons et réparons des pièces OEM d'origine des fabricants les plus fiables de l'industrie du VR.", "brands.note": "Vous ne voyez pas votre marque ? Nous travaillons avec la plupart des fabricants de VR — demandez-nous.",
           "hero.title": "Réparation de VR experte, mobile et sur place à Mission, TX",
           "hero.subtitle": "Des toits pourris et dégâts d'eau aux planchers, à l'électricité, la climatisation et la plomberie — on reconstruit comme il faut. On a tout vu.",
-          "hero.cta": "Appeler pour un rendez-vous", "hero.cta2": "Voir nos travaux", "hero.since": "Depuis 2016",
-          "hero.note": "Rendez-vous requis · Service sur place et mobile disponible",
+          "hero.cta": "Appeler pour un rendez-vous", "hero.cta2": "Voir nos travaux",
+          "hero.badge1": "Plus de 20 ans d'expérience", "hero.badge2": "Entreprise familiale", "hero.badge3": "Mission, TX",
+          "hero.note": "Rendez-vous requis · Service sur place et mobile · Tous types d'assurances acceptés",
           "hero.badge": "Vrais travaux · Vrais résultats",
           "strip.roofs": "Toits en caoutchouc", "strip.water": "Dégâts d'eau", "strip.floors": "Planchers", "strip.electric": "Électricité", "strip.ac": "Clim & chauffage", "strip.plumbing": "Plomberie", "strip.sales": "Vente de VR",
           "work.kicker": "Avant & après", "work.title": "Voyez le travail, étape par étape", "work.intro": "De vrais VR que nous avons restaurés — du démontage à la finition. Touchez une photo pour l'agrandir.",
@@ -778,14 +827,16 @@
           "svc.mech.t": "Plomberie & mécanique", "svc.mech.d": "Plomberie, échappement et dépannage mécanique — diagnostic précis et réparations honnêtes.",
           "svc.sales.t": "Vente de VR", "svc.sales.d": "Vous voulez acheter ou vendre ? Demandez à Mando les VR disponibles et les reprises.",
           "services.cta": "Parlez à Mando de votre VR",
-          "about.kicker": "Pourquoi nous choisir", "about.title": "Pourquoi Mando's", "about.body": "Dirigé par Armando (\"Mando\"), un mécanicien sur place qui traite chaque VR comme le sien. Travail honnête, vrais diagnostics et une promesse simple : on a tout vu.",
-          "pay.title": "Nous acceptons", "pay.note": "Cartes de crédit et débit · Apple Pay · Google Pay (paiement sans contact)",
+          "about.kicker": "Pourquoi nous choisir", "about.title": "Pourquoi Mando's", "about.body": "Entreprise familiale avec plus de 20 ans d'expérience. Nous travaillons avec tous les types d'assurances. Dirigé par Armando (\"Mando\"), un mécanicien sur place qui traite chaque VR comme le sien — travail honnête, vrais diagnostics et une promesse simple : on a tout vu.",
+          "pay.title": "Nous acceptons", "pay.note": "Cartes de crédit et débit · Apple Pay (paiement sans contact)", "pay.insurance": "Nous travaillons avec tous les types d'assurances — appelez-nous avec votre réclamation.",
           "feat.mobile.t": "Service sur place et mobile", "feat.mobile.d": "On vient à vous dans toute la vallée.",
           "feat.wifi.t": "WiFi gratuit", "feat.wifi.d": "Restez connecté en attendant.",
           "feat.restroom.t": "Toilettes publiques", "feat.restroom.d": "Installations propres sur place.",
           "feat.mech.t": "Mécanicien sur place", "feat.mech.d": "De vrais diagnostics, pas des suppositions.",
           "feat.appt.t": "Rendez-vous requis", "feat.appt.d": "Appelez à l'avance pour qu'on soit prêts.",
-          "feat.seen.t": "On a tout vu", "feat.seen.d": "Des années d'expérience VR dans la vallée.",
+          "feat.family.t": "Entreprise familiale", "feat.family.d": "Une entreprise de famille — les mêmes personnes au téléphone font le travail.",
+          "feat.experience.t": "Plus de 20 ans d'expérience", "feat.experience.d": "Plus de deux décennies de réparation de VR dans la vallée du Rio Grande.",
+          "feat.insurance.t": "Tous types d'assurances", "feat.insurance.d": "Nous travaillons avec toutes les grandes compagnies d'assurance — apportez votre réclamation, on s'occupe du reste.",
           "rev.kicker": "Témoignages", "rev.title": "La confiance des propriétaires de VR",
           "rev.q1": "\"J'ai envoyé à Mando des photos de mon toit et il a diagnostiqué le problème avant même d'arriver. Rapide, précis, sans surprise.\"",
           "rev.q2": "\"J'ai appelé le matin et il est venu vite. Il a réparé mon plancher abîmé par l'eau, comme neuf. Je recommande vivement.\"",
@@ -844,9 +895,7 @@
             // Mastercard
             '<span class="inline-flex h-9 items-center gap-0 rounded-md bg-white px-3 shadow-sm"><svg width="38" height="24" viewBox="0 0 38 24" aria-label="Mastercard" role="img"><circle cx="15" cy="12" r="8" fill="#EB001B"/><circle cx="23" cy="12" r="8" fill="#F79E1B" fill-opacity="0.9"/></svg></span>' +
             // Apple Pay
-            '<span class="inline-flex h-9 items-center rounded-md bg-white px-3 shadow-sm"><svg height="16" viewBox="0 0 60 16" aria-label="Apple Pay" role="img"><path d="M8.3 3.1c-.5.6-1.3 1-2.1.9-.1-.8.3-1.6.7-2.1.5-.6 1.4-1 2.1-1 .1.8-.2 1.6-.7 2.2zM9 4.2c-1.2-.1-2.2.7-2.7.7-.6 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.1-.3 5.3.9 7 .6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1 0 1.4.6 2.3.6.9 0 1.5-.8 2.1-1.7.7-1 .9-1.9 1-2-.1 0-1.9-.7-1.9-2.8 0-1.8 1.4-2.6 1.5-2.6-.8-1.2-2.1-1.3-2.5-1.4z" fill="#000"/><text x="16" y="13" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#000">Pay</text></svg></span>' +
-            // Google Pay
-            '<span class="inline-flex h-9 items-center rounded-md bg-white px-3 shadow-sm"><svg height="16" width="74" viewBox="0 0 74 16" aria-label="Google Pay" role="img"><text x="0" y="13" font-family="Arial, sans-serif" font-size="13" font-weight="700"><tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC04">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text><text x="46" y="13" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#5F6368">Pay</text></svg></span>';
+            '<span class="inline-flex h-9 items-center rounded-md bg-white px-3 shadow-sm"><svg height="16" viewBox="0 0 60 16" aria-label="Apple Pay" role="img"><path d="M8.3 3.1c-.5.6-1.3 1-2.1.9-.1-.8.3-1.6.7-2.1.5-.6 1.4-1 2.1-1 .1.8-.2 1.6-.7 2.2zM9 4.2c-1.2-.1-2.2.7-2.7.7-.6 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.1-.3 5.3.9 7 .6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1 0 1.4.6 2.3.6.9 0 1.5-.8 2.1-1.7.7-1 .9-1.9 1-2-.1 0-1.9-.7-1.9-2.8 0-1.8 1.4-2.6 1.5-2.6-.8-1.2-2.1-1.3-2.5-1.4z" fill="#000"/><text x="16" y="13" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#000">Pay</text></svg></span>';
         }
 
         /* ====== Mobile menu ====== */
